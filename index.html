@@ -77,7 +77,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 0;
+            z-index: 10;
             pointer-events: none;
             display: flex;
             justify-content: center;
@@ -98,7 +98,7 @@
             top: 0;
             bottom: 0;
             width: 1px;
-            background: var(--gray-200);
+            background: var(--gray-300);
         }
 
         .grid-frame-inner::before {
@@ -112,11 +112,11 @@
         /* Section with architectural frame */
         .framed-section {
             position: relative;
-            border-top: 1px solid var(--gray-200);
+            border-top: 1px solid var(--gray-300);
         }
 
         .framed-section:last-of-type {
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-300);
         }
 
         /* Content container within framed sections */
@@ -139,7 +139,7 @@
             top: 0;
             bottom: 0;
             width: 1px;
-            background: var(--gray-200);
+            background: var(--gray-300);
             transform: translateX(-50%);
         }
 
