@@ -70,17 +70,39 @@
             overflow-x: hidden;
         }
 
-        /* Grid Background Pattern */
-        .grid-bg {
-            background-image:
-                radial-gradient(circle, var(--gray-300) 1px, transparent 1px);
-            background-size: 24px 24px;
+        /* Grid Lines Background Pattern - Vertical columns like ColdIQ */
+        .grid-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
         }
 
-        .grid-bg-large {
-            background-image:
-                radial-gradient(circle, var(--gray-300) 1.5px, transparent 1.5px);
-            background-size: 32px 32px;
+        .grid-lines-inner {
+            width: 100%;
+            max-width: 1400px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 3rem;
+        }
+
+        .grid-line {
+            width: 1px;
+            height: 100%;
+            background: var(--gray-200);
+        }
+
+        /* Horizontal section dividers */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--gray-200);
         }
 
         /* Navigation */
@@ -1636,6 +1658,17 @@
     </style>
 </head>
 <body>
+    <!-- Grid Lines Background -->
+    <div class="grid-lines">
+        <div class="grid-lines-inner">
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <a href="#" class="logo">
@@ -1668,7 +1701,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero grid-bg">
+    <section class="hero">
         <div class="hero-decoration decoration-circle decoration-circle-1"></div>
         <div class="hero-decoration decoration-circle decoration-circle-2"></div>
 
@@ -1700,6 +1733,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Logo Cloud -->
     <section class="logo-cloud">
@@ -1746,6 +1781,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Services Section with Flowcharts -->
     <section class="services" id="services">
@@ -1888,8 +1925,10 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- GTM Flywheel Section -->
-    <section class="flywheel-section grid-bg-large">
+    <section class="flywheel-section">
         <div class="flywheel-container">
             <div class="flywheel-wrapper fade-in">
                 <svg class="flywheel-svg" viewBox="0 0 400 400">
@@ -1947,6 +1986,8 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Case Study Section -->
     <section class="case-studies" id="results">
         <div class="section-header fade-in">
@@ -1963,7 +2004,7 @@
                     </svg>
                 </a>
             </div>
-            <div class="funnel-infographic grid-bg">
+            <div class="funnel-infographic">
                 <div class="funnel-stage blue-bg">
                     <span class="funnel-stage-label">Lead Capture</span>
                     <div class="funnel-column">
@@ -2034,6 +2075,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
@@ -2112,6 +2155,8 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Email CTA -->
     <section style="padding: 4rem 3rem; background: var(--cream);">
         <div class="email-cta fade-in" style="max-width: 520px; margin: 0 auto;">
@@ -2119,6 +2164,8 @@
             <button>BOOK A CALL</button>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Features Grid -->
     <section class="features">
@@ -2181,6 +2228,8 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Timeline Section -->
     <section class="timeline">
         <div class="timeline-container">
@@ -2194,7 +2243,7 @@
                     <div class="timeline-title">Define & Setup</div>
                     <p class="timeline-description">Build the foundations of your outbound infrastructure. We'll setup your email domains, warm accounts, and define your ICP matrix.</p>
                 </div>
-                <div class="timeline-visual grid-bg">
+                <div class="timeline-visual">
                     <div class="timeline-diagram">
                         <div class="timeline-node highlighted">Your first campaigns hit the market</div>
                         <div class="timeline-connector"></div>
@@ -2241,7 +2290,7 @@
                     <div class="timeline-title">Create & Launch</div>
                     <p class="timeline-description">Craft your email sequences and build your lead lists. We'll start running your first campaigns and optimize based on initial results.</p>
                 </div>
-                <div class="timeline-visual grid-bg">
+                <div class="timeline-visual">
                     <div class="timeline-diagram">
                         <div class="timeline-node highlighted">Meeting Booked</div>
                         <div class="timeline-connector"></div>
@@ -2255,6 +2304,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- CTA Section -->
     <section class="cta" id="contact">
