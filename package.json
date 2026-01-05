@@ -1,0 +1,17 @@
+{
+  "name": "airr-digital-landing",
+  "version": "1.0.0",
+  "description": "Airr Digital - Performance Marketing Agency Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "marketing",
+    "agency",
+    "landing-page"
+  ],
+  "author": "Airr Digital",
+  "license": "MIT"
+}
