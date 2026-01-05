@@ -6,7 +6,7 @@
     <title>Airr Digital - Tomorrow's Growth Systems Built for You Today</title>
     <meta name="description" content="We build B2B Revenue Engines that sell for you. Performance marketing, paid ads, and cold outreach systems.">
 
-    <!-- Fonts - Matching ColdIQ's typography -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,17 +23,33 @@
             --gray-400: #9c9788;
             --gray-500: #6b6660;
             --gray-600: #4a4640;
-            --teal: #2DD4BF;
+
+            /* Brand colors */
+            --teal: #14B8A6;
             --teal-light: #CCFBF1;
-            --purple: #A855F7;
-            --purple-light: #F3E8FF;
-            --mint: #4ADE80;
-            --mint-light: #DCFCE7;
+            --teal-bg: #E6FAF7;
+            --purple: #8B5CF6;
+            --purple-light: #EDE9FE;
+            --purple-bg: #F5F3FF;
+            --green: #22C55E;
+            --green-light: #DCFCE7;
+            --green-bg: #F0FDF4;
+            --pink: #EC4899;
+            --pink-light: #FCE7F3;
+            --pink-bg: #FDF2F8;
+            --blue: #3B82F6;
+            --blue-light: #DBEAFE;
+            --blue-bg: #EFF6FF;
+            --orange: #F97316;
+            --orange-light: #FFEDD5;
+            --yellow: #EAB308;
+            --yellow-light: #FEF9C3;
 
             --font-serif: 'Playfair Display', Georgia, serif;
             --font-sans: 'Inter', -apple-system, sans-serif;
 
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         * {
@@ -54,6 +70,19 @@
             overflow-x: hidden;
         }
 
+        /* Grid Background Pattern */
+        .grid-bg {
+            background-image:
+                radial-gradient(circle, var(--gray-300) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .grid-bg-large {
+            background-image:
+                radial-gradient(circle, var(--gray-300) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -61,7 +90,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1.25rem 3rem;
+            padding: 1rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -71,19 +100,19 @@
 
         .logo {
             font-family: var(--font-sans);
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--black);
             text-decoration: none;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .logo-icon {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
         }
 
         .nav-center {
@@ -98,10 +127,37 @@
             font-size: 0.9375rem;
             font-weight: 500;
             transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-center a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--black);
+            transition: width 0.3s ease;
+        }
+
+        .nav-center a:hover::after {
+            width: 100%;
         }
 
         .nav-center a:hover {
             color: var(--black);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-icon {
+            width: 12px;
+            height: 12px;
+            margin-left: 4px;
+            transition: transform 0.3s ease;
         }
 
         .nav-cta {
@@ -117,7 +173,8 @@
 
         .nav-cta:hover {
             background: var(--gray-600);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         /* Hero Section */
@@ -126,10 +183,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 8rem 2rem 4rem;
-            background: var(--cream);
+            padding: 7rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
         }
 
         .hero-badge {
@@ -140,25 +202,32 @@
             border: 1px solid var(--gray-200);
             padding: 0.5rem 1.25rem;
             border-radius: 100px;
-            font-size: 0.8125rem;
+            font-size: 0.75rem;
             color: var(--gray-500);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .hero-badge svg {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
         }
 
         .hero h1 {
             font-family: var(--font-serif);
             font-size: clamp(2.75rem, 6vw, 4.5rem);
             font-weight: 400;
-            line-height: 1.15;
-            max-width: 900px;
-            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
             color: var(--black);
         }
 
@@ -169,39 +238,84 @@
         .hero-subtitle {
             font-size: 1.125rem;
             color: var(--gray-500);
-            max-width: 500px;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Video Container */
+        .hero-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero-video {
             width: 100%;
-            max-width: 900px;
             aspect-ratio: 16/9;
-            background: var(--black);
-            border-radius: 12px;
-            margin-top: 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-video::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23333" width="100" height="100"/><rect fill="%23222" x="0" y="0" width="50" height="50"/><rect fill="%23222" x="50" y="50" width="50" height="50"/></svg>');
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+
+        .video-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            backdrop-filter: blur(4px);
         }
 
         .play-button {
             width: 80px;
             height: 80px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: all 0.3s var(--ease-bounce);
+            position: relative;
+            z-index: 2;
+        }
+
+        .play-button::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
         }
 
         .play-button:hover {
             transform: scale(1.1);
+            box-shadow: 0 10px 40px rgba(255,255,255,0.3);
         }
 
         .play-button svg {
@@ -211,12 +325,116 @@
             color: var(--black);
         }
 
-        /* Services Section */
-        .services {
-            padding: 6rem 3rem;
-            background: var(--cream);
+        /* Floating Decorations */
+        .hero-decoration {
+            position: absolute;
+            pointer-events: none;
         }
 
+        .decoration-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1px dashed var(--gray-300);
+            opacity: 0.5;
+        }
+
+        .decoration-circle-1 {
+            top: 10%;
+            left: -150px;
+            animation: rotate-slow 60s linear infinite;
+        }
+
+        .decoration-circle-2 {
+            bottom: 10%;
+            right: -150px;
+            animation: rotate-slow 60s linear infinite reverse;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Logo Cloud */
+        .logo-cloud {
+            padding: 4rem 3rem;
+            background: var(--cream);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .logo-cloud-title {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-item {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid var(--gray-200);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:nth-child(6n) {
+            border-right: none;
+        }
+
+        .logo-item:nth-child(n+7) {
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .logo-item:hover {
+            background: var(--white);
+        }
+
+        .logo-item img {
+            height: 24px;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .logo-placeholder {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            letter-spacing: 0.05em;
+        }
+
+        .case-study-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: var(--teal);
+            color: white;
+            font-size: 0.625rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Headers */
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
@@ -234,89 +452,235 @@
             font-style: italic;
         }
 
-        .services-grid {
+        .section-header p {
+            font-size: 1rem;
+            color: var(--gray-500);
+        }
+
+        /* Services Section with Flowcharts */
+        .services {
+            padding: 6rem 3rem;
+            background: var(--cream);
+        }
+
+        .services-container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .services-columns {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 0;
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
             background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
             overflow: hidden;
         }
 
-        .service-card {
-            padding: 2.5rem;
+        .service-column {
+            padding: 2rem;
             border-right: 1px solid var(--gray-200);
             position: relative;
         }
 
-        .service-card:nth-child(3),
-        .service-card:nth-child(6) {
+        .service-column:last-child {
             border-right: none;
         }
 
-        .service-card:nth-child(1),
-        .service-card:nth-child(2),
-        .service-card:nth-child(3) {
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .service-icon {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 1.25rem;
-            color: var(--gray-500);
-        }
-
-        .service-card h3 {
+        .service-column h3 {
             font-family: var(--font-sans);
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
             color: var(--black);
         }
 
-        .service-card p {
+        .service-column > p {
             font-size: 0.9375rem;
             color: var(--gray-500);
+            margin-bottom: 2rem;
             line-height: 1.6;
         }
 
-        /* Flywheel Section */
-        .flywheel {
+        /* Flowchart */
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .flowchart::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            border-left: 2px dashed var(--gray-300);
+            transform: translateX(-50%);
+        }
+
+        .flow-row {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.75rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .flow-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 0.5rem 0.875rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .flow-pill:hover {
+            border-color: var(--teal);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .flow-pill svg, .flow-pill img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .flow-pill.has-icons {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flow-icons {
+            display: flex;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .flow-icons span {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        /* Tier Pills */
+        .tier-row {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .tier-pill {
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tier-1 { background: var(--teal); color: white; }
+        .tier-2 { background: var(--purple); color: white; }
+        .tier-3 { background: var(--green); color: white; }
+        .tier-tof { background: var(--teal); color: white; }
+        .tier-mof { background: var(--purple); color: white; }
+        .tier-bof { background: var(--green); color: white; }
+
+        /* Outcome Row */
+        .outcome-row {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .outcome-pill {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            padding: 0.5rem 0.875rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+
+        /* Channel Buttons */
+        .channel-row {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .channel-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.625rem 1rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .channel-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .channel-btn.green { background: var(--green); }
+        .channel-btn.purple { background: var(--purple); }
+        .channel-btn.blue { background: var(--blue); }
+        .channel-btn.teal { background: var(--teal); }
+
+        /* GTM Flywheel Section */
+        .flywheel-section {
             padding: 6rem 3rem;
             background: var(--cream);
+            position: relative;
         }
 
         .flywheel-container {
             max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .flywheel-visual {
+        .flywheel-wrapper {
             position: relative;
-            width: 400px;
-            height: 400px;
-            margin: 3rem auto;
+            width: 420px;
+            height: 420px;
+            margin: 3rem 0;
         }
 
-        .flywheel-circle {
+        .flywheel-svg {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
-            position: relative;
-            background: conic-gradient(
-                var(--purple) 0deg 120deg,
-                var(--teal) 120deg 240deg,
-                var(--mint) 240deg 360deg
-            );
-            animation: rotate 20s linear infinite;
+            animation: flywheel-spin 30s linear infinite;
         }
 
-        @keyframes rotate {
+        @keyframes flywheel-spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
@@ -326,8 +690,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             background: var(--cream);
             border-radius: 50%;
             display: flex;
@@ -335,7 +699,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 1rem;
+            box-shadow: 0 0 40px rgba(0,0,0,0.05);
         }
 
         .flywheel-center h3 {
@@ -348,47 +712,90 @@
         .flywheel-center p {
             font-size: 0.75rem;
             color: var(--gray-500);
+            line-height: 1.4;
         }
 
+        /* Flywheel Labels */
         .flywheel-label {
             position: absolute;
             background: var(--white);
             border: 1px solid var(--gray-200);
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
+            padding: 0.875rem 1.125rem;
+            border-radius: 10px;
             font-size: 0.8125rem;
             color: var(--gray-600);
-            max-width: 180px;
+            max-width: 200px;
             text-align: left;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            line-height: 1.5;
         }
 
-        .flywheel-label.top-right {
-            top: 10%;
-            right: -200px;
+        .flywheel-label:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .flywheel-label.bottom-left {
-            bottom: 20%;
-            left: -200px;
+        .flywheel-label::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 1px;
+            border-top: 2px dashed var(--teal);
+        }
+
+        .flywheel-label.right {
+            right: -220px;
+            top: 20%;
+        }
+
+        .flywheel-label.right::before {
+            left: -62px;
+            top: 50%;
+        }
+
+        .flywheel-label.left {
+            left: -220px;
+            bottom: 30%;
+        }
+
+        .flywheel-label.left::before {
+            right: -62px;
+            top: 50%;
         }
 
         .flywheel-label.bottom {
-            bottom: -60px;
+            bottom: -80px;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        .flywheel-label.bottom::before {
+            display: none;
+        }
+
+        .flywheel-label.bottom:hover {
+            transform: translateX(-50%) translateY(-4px);
         }
 
         /* Email CTA */
         .email-cta {
             display: flex;
             gap: 0;
-            max-width: 500px;
-            margin: 3rem auto 0;
+            max-width: 520px;
+            width: 100%;
+            margin: 2rem auto 0;
             background: var(--white);
             border: 1px solid var(--gray-200);
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .email-cta:focus-within {
+            border-color: var(--teal);
+            box-shadow: 0 4px 20px rgba(20, 184, 166, 0.15);
         }
 
         .email-cta input {
@@ -408,117 +815,139 @@
         .email-cta button {
             background: var(--black);
             color: var(--white);
-            padding: 1rem 1.5rem;
+            padding: 1rem 1.75rem;
             border: none;
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.8125rem;
+            font-weight: 600;
             font-family: var(--font-sans);
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             white-space: nowrap;
+            letter-spacing: 0.03em;
         }
 
         .email-cta button:hover {
             background: var(--gray-600);
         }
 
-        /* Results Section */
-        .results {
+        /* Case Study Section */
+        .case-studies {
             padding: 6rem 3rem;
             background: var(--cream);
         }
 
-        .results-container {
-            max-width: 1200px;
+        .case-study-card {
+            max-width: 1100px;
             margin: 0 auto;
-        }
-
-        .results-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .results-header h2 {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 400;
-        }
-
-        .results-header h2 em {
-            font-style: italic;
-        }
-
-        .results-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .result-card {
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: center;
             background: var(--white);
             border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 2rem;
+            border-radius: 16px;
+            padding: 3rem;
+            overflow: hidden;
+        }
+
+        .case-study-content h3 {
+            font-family: var(--font-sans);
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .case-study-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--black);
+            color: var(--white);
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .result-card:hover {
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        .case-study-cta:hover {
+            background: var(--gray-600);
             transform: translateY(-2px);
         }
 
-        .result-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
+        /* Funnel Infographic */
+        .funnel-infographic {
+            position: relative;
+            padding: 2rem;
+            border-radius: 12px;
         }
 
-        .result-client {
-            font-size: 0.75rem;
+        .funnel-stage {
+            position: relative;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .funnel-stage.teal-bg { background: var(--teal-bg); }
+        .funnel-stage.pink-bg { background: var(--pink-bg); }
+        .funnel-stage.purple-bg { background: var(--purple-bg); }
+        .funnel-stage.blue-bg { background: var(--blue-bg); }
+
+        .funnel-stage-label {
+            position: absolute;
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            font-size: 0.625rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--gray-500);
-            padding: 0.375rem 0.75rem;
-            background: var(--gray-100);
-            border-radius: 4px;
+            color: var(--gray-400);
+            white-space: nowrap;
         }
 
-        .result-industry {
-            font-size: 0.75rem;
-            color: var(--teal);
-            font-weight: 500;
+        .funnel-column {
+            text-align: center;
         }
 
-        .result-metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .result-metric-value {
-            font-family: var(--font-serif);
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: var(--black);
-            line-height: 1;
-            margin-bottom: 0.25rem;
-        }
-
-        .result-metric-label {
+        .funnel-column-title {
             font-size: 0.6875rem;
+            font-weight: 600;
             color: var(--gray-500);
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .result-description {
-            font-size: 0.9375rem;
-            color: var(--gray-500);
-            line-height: 1.6;
+        .funnel-icons {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .funnel-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+        }
+
+        .funnel-icon:hover {
+            transform: scale(1.15);
         }
 
         /* Testimonials */
@@ -532,21 +961,6 @@
             margin: 0 auto;
         }
 
-        .testimonials-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .testimonials-header h2 {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 400;
-        }
-
-        .testimonials-header h2 em {
-            font-style: italic;
-        }
-
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -558,31 +972,61 @@
             border: 1px solid var(--gray-200);
             border-radius: 12px;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
         }
 
         .testimonial-video {
             width: 100%;
             aspect-ratio: 16/10;
-            background: linear-gradient(135deg, var(--purple-light), var(--teal-light));
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
-        .testimonial-video-text {
+        .testimonial-video.gradient-1 {
+            background: linear-gradient(135deg, #fce7f3 0%, #dbeafe 50%, #ccfbf1 100%);
+        }
+
+        .testimonial-video.gradient-2 {
+            background: linear-gradient(135deg, #dcfce7 0%, #fef9c3 100%);
+        }
+
+        .testimonial-video.gradient-3 {
+            background: linear-gradient(135deg, #ede9fe 0%, #fce7f3 100%);
+        }
+
+        .testimonial-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        .testimonial-quote {
             font-family: var(--font-serif);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 500;
-            color: var(--black);
+            color: white;
             text-align: center;
-            padding: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.3;
         }
 
         .testimonial-play {
             position: absolute;
-            right: 1rem;
-            top: 1rem;
+            right: 12px;
+            top: 12px;
             width: 36px;
             height: 36px;
             background: rgba(255, 255, 255, 0.9);
@@ -590,6 +1034,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-play:hover {
+            transform: scale(1.1);
         }
 
         .testimonial-play svg {
@@ -600,6 +1050,7 @@
 
         .testimonial-content {
             padding: 1.5rem;
+            border-top: 1px solid var(--gray-200);
         }
 
         .testimonial-author {
@@ -607,6 +1058,19 @@
             align-items: center;
             gap: 0.75rem;
             margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--teal-light), var(--purple-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-600);
         }
 
         .testimonial-logo {
@@ -617,8 +1081,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.6875rem;
+            font-weight: 700;
             color: var(--gray-500);
         }
 
@@ -650,31 +1114,13 @@
             margin: 0 auto;
         }
 
-        .features-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .features-header p {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            color: var(--black);
-            margin-bottom: 0.5rem;
-        }
-
-        .features-header h2 {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 400;
-        }
-
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 0;
             background: var(--white);
             border: 1px solid var(--gray-200);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
         }
 
@@ -682,22 +1128,24 @@
             padding: 2rem;
             border-right: 1px solid var(--gray-200);
             border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
         }
 
-        .feature-item:nth-child(3),
-        .feature-item:nth-child(6) {
+        .feature-item:hover {
+            background: var(--gray-100);
+        }
+
+        .feature-item:nth-child(3n) {
             border-right: none;
         }
 
-        .feature-item:nth-child(4),
-        .feature-item:nth-child(5),
-        .feature-item:nth-child(6) {
+        .feature-item:nth-child(n+4) {
             border-bottom: none;
         }
 
         .feature-icon {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             margin-bottom: 1rem;
             color: var(--gray-400);
         }
@@ -715,23 +1163,188 @@
             line-height: 1.6;
         }
 
+        /* Timeline Section */
+        .timeline {
+            padding: 6rem 3rem;
+            background: var(--cream);
+        }
+
+        .timeline-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .timeline-row {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 0;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--gray-200);
+        }
+
+        .timeline-week {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-description {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        .timeline-visual {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .timeline-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .timeline-node {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-node.highlighted {
+            background: var(--teal-bg);
+            border-color: var(--teal);
+            color: var(--black);
+        }
+
+        .timeline-connector {
+            width: 2px;
+            height: 30px;
+            border-left: 2px dashed var(--teal);
+        }
+
+        .timeline-branches {
+            display: flex;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .timeline-branches::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 15px;
+            border: 2px dashed var(--teal);
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .timeline-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-branch-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            padding: 1rem;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .timeline-branch-card h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.375rem;
+        }
+
+        .timeline-branch-card ul {
+            list-style: none;
+            font-size: 0.6875rem;
+            color: var(--gray-500);
+            text-align: left;
+        }
+
+        .timeline-branch-card li {
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-branch-card li::before {
+            content: '•';
+            margin-right: 0.375rem;
+            color: var(--gray-400);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-dot.green { background: var(--green); }
+        .status-dot.purple { background: var(--purple); }
+        .status-dot.teal { background: var(--teal); }
+
         /* CTA Section */
         .cta {
             padding: 6rem 3rem;
             background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+            position: relative;
         }
 
         .cta-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .cta h2 {
             font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 400;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .cta h2 em {
@@ -742,6 +1355,7 @@
             font-size: 1.0625rem;
             color: var(--gray-500);
             margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -778,7 +1392,7 @@
             margin-top: 1rem;
             background: var(--white);
             border: 1px solid var(--gray-200);
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
             max-width: 320px;
         }
@@ -799,8 +1413,8 @@
             color: var(--white);
             padding: 0.75rem 1rem;
             border: none;
-            font-size: 0.8125rem;
-            font-weight: 500;
+            font-size: 0.75rem;
+            font-weight: 600;
             font-family: var(--font-sans);
             cursor: pointer;
             white-space: nowrap;
@@ -832,17 +1446,6 @@
             color: var(--black);
         }
 
-        .footer-contact a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-contact svg {
-            width: 16px;
-            height: 16px;
-        }
-
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -865,19 +1468,63 @@
             padding: 0.5rem;
         }
 
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s var(--ease-out);
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
         /* Responsive */
         @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .services-columns {
+                grid-template-columns: 1fr;
             }
 
-            .service-card:nth-child(2),
-            .service-card:nth-child(4) {
+            .service-column {
+                border-right: none;
+                border-bottom: 1px solid var(--gray-200);
+            }
+
+            .service-column:last-child {
+                border-bottom: none;
+            }
+
+            .case-study-card {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .logo-item:nth-child(3n) {
                 border-right: none;
             }
 
-            .service-card:nth-child(3) {
-                border-right: 1px solid var(--gray-200);
+            .logo-item:nth-child(n+4) {
+                border-top: 1px solid var(--gray-200);
             }
 
             .testimonials-grid {
@@ -888,8 +1535,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .feature-item:nth-child(2),
-            .feature-item:nth-child(4) {
+            .feature-item:nth-child(2n) {
                 border-right: none;
             }
 
@@ -899,6 +1545,15 @@
 
             .flywheel-label {
                 display: none;
+            }
+
+            .timeline-row {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-content {
+                border-right: none;
+                border-bottom: 1px solid var(--gray-200);
             }
         }
 
@@ -919,47 +1574,35 @@
                 padding: 6rem 1.5rem 3rem;
             }
 
-            .services, .flywheel, .results, .testimonials, .features, .cta {
+            .services, .flywheel-section, .case-studies, .testimonials, .features, .timeline, .cta {
                 padding: 4rem 1.5rem;
             }
 
-            .services-grid,
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .logo-item:nth-child(2n) {
+                border-right: none;
+            }
+
+            .testimonials-grid,
             .features-grid {
                 grid-template-columns: 1fr;
             }
 
-            .service-card,
             .feature-item {
                 border-right: none !important;
-                border-bottom: 1px solid var(--gray-200) !important;
             }
 
-            .service-card:last-child,
-            .feature-item:last-child {
-                border-bottom: none !important;
-            }
-
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .result-metrics {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .flywheel-visual {
-                width: 280px;
-                height: 280px;
+            .flywheel-wrapper {
+                width: 300px;
+                height: 300px;
             }
 
             .flywheel-center {
-                width: 140px;
-                height: 140px;
+                width: 130px;
+                height: 130px;
             }
 
             .email-cta {
@@ -980,23 +1623,16 @@
                 gap: 1rem;
                 text-align: center;
             }
-        }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s var(--ease-out);
-        }
+            .timeline-branches {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            .timeline-branches::before {
+                display: none;
+            }
         }
-
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
     </style>
 </head>
 <body>
@@ -1013,7 +1649,13 @@
         <ul class="nav-center">
             <li><a href="#services">Agency</a></li>
             <li><a href="#results">Results</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+            <li class="nav-dropdown">
+                <a href="#testimonials">Education
+                    <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </a>
+            </li>
         </ul>
         <a href="#contact" class="nav-cta">Get In Touch</a>
         <button class="mobile-menu-btn">
@@ -1026,201 +1668,368 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-            </svg>
-            For B2B companies above >$100K/mo in revenue
-        </div>
-        <h1>Tomorrow's <em>Growth Systems</em><br>Built Today.</h1>
-        <p class="hero-subtitle">We build B2B Revenue Engines that sell for you</p>
+    <section class="hero grid-bg">
+        <div class="hero-decoration decoration-circle decoration-circle-1"></div>
+        <div class="hero-decoration decoration-circle decoration-circle-2"></div>
 
-        <div class="hero-video">
-            <div class="play-button">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="5 3 19 12 5 21 5 3"/>
+        <div class="hero-content">
+            <div class="hero-badge fade-in">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
                 </svg>
+                For B2B companies above >$100K/mo in revenue
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 12px; height: 12px;">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+            </div>
+            <h1 class="fade-in stagger-1">Tomorrow's <em>Growth Systems</em><br>Built Today.</h1>
+            <p class="hero-subtitle fade-in stagger-2">We build B2B Revenue Engines that sell for you</p>
+
+            <div class="hero-video-wrapper fade-in stagger-3">
+                <div class="hero-video">
+                    <div class="play-button">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                    </div>
+                    <div class="video-caption">This is mostly answering who do you want to...</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Logo Cloud -->
+    <section class="logo-cloud">
+        <p class="logo-cloud-title">GTM Teams that trust Airr Digital to grow their Pipelines</p>
+        <div class="logo-grid">
+            <div class="logo-item">
+                <span class="logo-placeholder">TechFlow</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">ScaleUp</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">GrowthOS</span>
+                <span class="case-study-badge">Case Study</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">RevOps</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">DataSync</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">CloudPeak</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">Metrics</span>
+                <span class="case-study-badge">Case Study</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">SalesForge</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">PipelineAI</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">LeadGen</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">ConvertX</span>
+                <span class="case-study-badge">Case Study</span>
+            </div>
+            <div class="logo-item">
+                <span class="logo-placeholder">Amplify</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Flowcharts -->
     <section class="services" id="services">
-        <div class="section-header">
-            <h2><em>3 ways we help you grow</em><br>content, ads & outbound</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                <h3>Cold Outreach</h3>
-                <p>We run personalized prospecting campaigns that flood your calendar with qualified leads.</p>
+        <div class="services-container">
+            <div class="section-header fade-in">
+                <h2><em>3 ways we help you grow</em><br>content, ads & outbound</h2>
             </div>
-            <div class="service-card fade-in stagger-1">
-                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                    <line x1="3" y1="9" x2="21" y2="9"/>
-                    <line x1="9" y1="21" x2="9" y2="9"/>
-                </svg>
-                <h3>Paid Ads</h3>
-                <p>We run Meta and LinkedIn campaigns that turn cold accounts into sales-ready opportunities.</p>
-            </div>
-            <div class="service-card fade-in stagger-2">
-                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 20h9"/>
-                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                </svg>
-                <h3>LinkedIn Content</h3>
-                <p>We publish high-performing content pieces that educate your target on your offering.</p>
-            </div>
-            <div class="service-card fade-in stagger-1">
-                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                </svg>
-                <h3>Landing Pages</h3>
-                <p>High-converting pages built on psychology, not templates. Optimized for conversions.</p>
-            </div>
-            <div class="service-card fade-in stagger-2">
-                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                    <polyline points="2 17 12 22 22 17"/>
-                    <polyline points="2 12 12 17 22 12"/>
-                </svg>
-                <h3>Marketing Automation</h3>
-                <p>CRM flows, lead scoring, and attribution models that show you exactly what's working.</p>
-            </div>
-            <div class="service-card fade-in stagger-3">
-                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <line x1="18" y1="20" x2="18" y2="10"/>
-                    <line x1="12" y1="20" x2="12" y2="4"/>
-                    <line x1="6" y1="20" x2="6" y2="14"/>
-                </svg>
-                <h3>Analytics & Attribution</h3>
-                <p>Multi-touch attribution that shows real ROI. Weekly dashboards with granular metrics.</p>
+
+            <div class="services-columns scale-in">
+                <!-- Outbound Column -->
+                <div class="service-column">
+                    <h3>Outbound</h3>
+                    <p>We run personalized prospecting campaigns that flood your calendar with qualified leads.</p>
+
+                    <div class="flowchart">
+                        <div class="flow-row">
+                            <div class="flow-pill">Email Infra</div>
+                            <div class="flow-pill">ICP Matrix</div>
+                            <div class="flow-pill">TAM Scoping</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">
+                                Play & Signals Selection
+                                <div class="flow-icons">
+                                    <span style="background: #0A66C2; color: white;">in</span>
+                                    <span style="background: #1DA1F2; color: white;">𝕏</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">Company & Contact Sourcing</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">Lead Scoring & Tiering</div>
+                        </div>
+                        <div class="tier-row">
+                            <span class="tier-pill tier-1">Tier 1</span>
+                            <span class="tier-pill tier-2">Tier 2</span>
+                            <span class="tier-pill tier-3">Tier 3</span>
+                        </div>
+                        <div class="outcome-row">
+                            <span class="outcome-pill">High-Intent</span>
+                            <span class="outcome-pill">Signal-Based</span>
+                            <span class="outcome-pill">Personalized</span>
+                        </div>
+                        <div class="channel-row">
+                            <span class="channel-btn green">Omnichannel</span>
+                            <span class="channel-btn purple">Multichannel</span>
+                            <span class="channel-btn teal">Email Only</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Ads Column -->
+                <div class="service-column">
+                    <h3>LinkedIn Ads</h3>
+                    <p>We run ABM campaigns that turn cold accounts into sales-ready opportunities.</p>
+
+                    <div class="flowchart">
+                        <div class="flow-row">
+                            <div class="flow-pill">ICP Definition</div>
+                            <div class="flow-pill">Account List</div>
+                            <div class="flow-pill">Creative Assets</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">
+                                Ad Design
+                                <div class="flow-icons">
+                                    <span style="background: #F24E1E; color: white;">F</span>
+                                    <span style="background: #0ACF83; color: white;">▲</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">Targeting</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">Attribution</div>
+                        </div>
+                        <div class="tier-row">
+                            <span class="tier-pill tier-1">Tier 1</span>
+                            <span class="tier-pill tier-2">Tier 2</span>
+                            <span class="tier-pill tier-3">Tier 3</span>
+                        </div>
+                        <div class="outcome-row">
+                            <span class="outcome-pill">Awareness</span>
+                            <span class="outcome-pill">Consideration</span>
+                            <span class="outcome-pill">Conversion</span>
+                        </div>
+                        <div class="channel-row">
+                            <span class="channel-btn purple">Thought Leader</span>
+                            <span class="channel-btn green">Case Studies</span>
+                            <span class="channel-btn blue">Direct CTA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Content Column -->
+                <div class="service-column">
+                    <h3>LinkedIn Content</h3>
+                    <p>We publish high-performing content pieces that educate your target on your offering.</p>
+
+                    <div class="flowchart">
+                        <div class="flow-row">
+                            <div class="flow-pill">ICP Research</div>
+                            <div class="flow-pill">Content Pillars</div>
+                            <div class="flow-pill">Brand Voice</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">
+                                Content Ideation
+                                <div class="flow-icons">
+                                    <span style="background: #10A37F; color: white;">◆</span>
+                                    <span style="background: #5436DA; color: white;">N</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">Content Writing</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-pill">Design</div>
+                        </div>
+                        <div class="tier-row">
+                            <span class="tier-pill tier-tof">TOF</span>
+                            <span class="tier-pill tier-mof">MOF</span>
+                            <span class="tier-pill tier-bof">BOF</span>
+                        </div>
+                        <div class="outcome-row">
+                            <span class="outcome-pill">Hot Takes</span>
+                            <span class="outcome-pill">How-Tos</span>
+                            <span class="outcome-pill">Case Studies</span>
+                        </div>
+                        <div class="channel-row">
+                            <span class="channel-btn blue">LinkedIn Posts</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Flywheel Section -->
-    <section class="flywheel">
+    <!-- GTM Flywheel Section -->
+    <section class="flywheel-section grid-bg-large">
         <div class="flywheel-container">
-            <div class="flywheel-visual">
-                <div class="flywheel-circle"></div>
+            <div class="flywheel-wrapper fade-in">
+                <svg class="flywheel-svg" viewBox="0 0 400 400">
+                    <defs>
+                        <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8B5CF6"/>
+                            <stop offset="100%" style="stop-color:#A78BFA"/>
+                        </linearGradient>
+                        <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#14B8A6"/>
+                            <stop offset="100%" style="stop-color:#2DD4BF"/>
+                        </linearGradient>
+                        <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#22C55E"/>
+                            <stop offset="100%" style="stop-color:#4ADE80"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Content Segment (Purple) -->
+                    <path d="M200,200 L200,50 A150,150 0 0,1 329.9,275 Z" fill="url(#purpleGrad)"/>
+                    <!-- Outbound Segment (Teal) -->
+                    <path d="M200,200 L329.9,275 A150,150 0 0,1 70.1,275 Z" fill="url(#tealGrad)"/>
+                    <!-- ABM Ads Segment (Green) -->
+                    <path d="M200,200 L70.1,275 A150,150 0 0,1 200,50 Z" fill="url(#greenGrad)"/>
+
+                    <!-- Segment Labels -->
+                    <text x="260" y="130" fill="white" font-size="14" font-weight="600" transform="rotate(30 260 130)">Content</text>
+                    <text x="280" y="280" fill="white" font-size="14" font-weight="600" transform="rotate(-30 280 280)">Outbound</text>
+                    <text x="90" y="240" fill="white" font-size="14" font-weight="600" transform="rotate(30 90 240)">ABM Ads</text>
+
+                    <!-- Arrows -->
+                    <path d="M340,180 Q360,200 340,220" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrowhead)"/>
+                    <path d="M240,340 Q200,360 160,340" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M60,220 Q40,200 60,180" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
                 <div class="flywheel-center">
-                    <h3>Growth Flywheel</h3>
+                    <h3>GTM Flywheel</h3>
                     <p>Each closed deal fuels the next cycle</p>
                 </div>
-                <div class="flywheel-label top-right">
-                    Outbound generates immediate pipeline.
+
+                <div class="flywheel-label right">
+                    <strong>Outbound</strong> generates immediate pipeline.
                 </div>
-                <div class="flywheel-label bottom-left">
-                    Content builds authority that compounds over time.
+                <div class="flywheel-label left">
+                    <strong>Content</strong> builds authority that compounds over time.
                 </div>
                 <div class="flywheel-label bottom">
-                    ABM Ads warm up cold prospects.
+                    <strong>ABM Ads</strong> warm up cold prospects.
                 </div>
             </div>
-            <div class="email-cta">
+
+            <div class="email-cta fade-in">
                 <input type="email" placeholder="Enter your work email">
                 <button>BOOK A CALL</button>
             </div>
         </div>
     </section>
 
-    <!-- Results Section -->
-    <section class="results" id="results">
-        <div class="results-container">
-            <div class="results-header">
-                <h2><em>Find out for yourself how we generate</em><br>demand across the entire funnel</h2>
+    <!-- Case Study Section -->
+    <section class="case-studies" id="results">
+        <div class="section-header fade-in">
+            <h2><em>Find out for yourself how we generate</em><br>demand across the entire funnel</h2>
+        </div>
+
+        <div class="case-study-card scale-in">
+            <div class="case-study-content">
+                <h3>How Airr Digital + GrowthOS Built $7.83M in Qualified Pipeline (and $1.52M Closed-Won) with a Full ABM Motion</h3>
+                <a href="#" class="case-study-cta">
+                    Read Detailed Case Study
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
             </div>
-            <div class="results-grid">
-                <div class="result-card fade-in">
-                    <div class="result-header">
-                        <span class="result-client">B2B SaaS</span>
-                        <span class="result-industry">HR Tech</span>
-                    </div>
-                    <div class="result-metrics">
-                        <div class="result-metric">
-                            <div class="result-metric-value">347%</div>
-                            <div class="result-metric-label">ROAS Increase</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">$2.1M</div>
-                            <div class="result-metric-label">Pipeline Generated</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">-62%</div>
-                            <div class="result-metric-label">CAC Reduction</div>
+            <div class="funnel-infographic grid-bg">
+                <div class="funnel-stage blue-bg">
+                    <span class="funnel-stage-label">Lead Capture</span>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Visitor Identification</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">🎯</div>
+                            <div class="funnel-icon">📊</div>
+                            <div class="funnel-icon">🔍</div>
                         </div>
                     </div>
-                    <p class="result-description">Rebuilt their entire paid acquisition strategy with multi-touch attribution optimized for SQL quality.</p>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Landing Pages & Forms</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">📄</div>
+                            <div class="funnel-icon">✍️</div>
+                            <div class="funnel-icon">📧</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="result-card fade-in stagger-1">
-                    <div class="result-header">
-                        <span class="result-client">E-commerce</span>
-                        <span class="result-industry">DTC Brand</span>
-                    </div>
-                    <div class="result-metrics">
-                        <div class="result-metric">
-                            <div class="result-metric-value">4.2x</div>
-                            <div class="result-metric-label">Revenue Growth</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">$890K</div>
-                            <div class="result-metric-label">Monthly Revenue</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">38%</div>
-                            <div class="result-metric-label">Email Revenue</div>
+                <div class="funnel-stage pink-bg">
+                    <span class="funnel-stage-label">Lead Management</span>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Lead Scoring</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">⭐</div>
+                            <div class="funnel-icon">📈</div>
                         </div>
                     </div>
-                    <p class="result-description">Scaled from $180K to $890K monthly in 8 months through Meta ads and email lifecycle overhaul.</p>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Lead Routing</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">🔀</div>
+                            <div class="funnel-icon">👥</div>
+                        </div>
+                    </div>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Lead Nurturing</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">💬</div>
+                            <div class="funnel-icon">🤝</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="result-card fade-in stagger-2">
-                    <div class="result-header">
-                        <span class="result-client">Professional Services</span>
-                        <span class="result-industry">Consulting</span>
-                    </div>
-                    <div class="result-metrics">
-                        <div class="result-metric">
-                            <div class="result-metric-value">156</div>
-                            <div class="result-metric-label">Qualified Meetings</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">23%</div>
-                            <div class="result-metric-label">Close Rate</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">$4.7M</div>
-                            <div class="result-metric-label">Contract Value</div>
+                <div class="funnel-stage purple-bg">
+                    <span class="funnel-stage-label">Lead Conversion</span>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Sales Enablement</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">📋</div>
+                            <div class="funnel-icon">🎤</div>
                         </div>
                     </div>
-                    <p class="result-description">Built a cold outreach machine that books 20+ qualified meetings per month with enterprise buyers.</p>
-                </div>
-                <div class="result-card fade-in stagger-3">
-                    <div class="result-header">
-                        <span class="result-client">FinTech</span>
-                        <span class="result-industry">B2B Payments</span>
-                    </div>
-                    <div class="result-metrics">
-                        <div class="result-metric">
-                            <div class="result-metric-value">5.8x</div>
-                            <div class="result-metric-label">Lead Volume</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">$127</div>
-                            <div class="result-metric-label">Cost Per Lead</div>
-                        </div>
-                        <div class="result-metric">
-                            <div class="result-metric-value">312%</div>
-                            <div class="result-metric-label">YoY Growth</div>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Sales Calls</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">📞</div>
+                            <div class="funnel-icon">🎥</div>
                         </div>
                     </div>
-                    <p class="result-description">Launched LinkedIn + Google Ads strategy targeting CFOs. 5.8x lead volume, 41% lower CPL.</p>
+                    <div class="funnel-column">
+                        <div class="funnel-column-title">Proposals</div>
+                        <div class="funnel-icons">
+                            <div class="funnel-icon">📝</div>
+                            <div class="funnel-icon">✅</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1229,13 +2038,15 @@
     <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
         <div class="testimonials-container">
-            <div class="testimonials-header">
+            <div class="section-header fade-in">
                 <h2><em>Don't take our word for it</em><br>Hear it from them</h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <div class="testimonial-video">
-                        <div class="testimonial-video-text">"We could really get more qualified list of people"</div>
+                    <div class="testimonial-video gradient-1">
+                        <div class="testimonial-video-overlay">
+                            <div class="testimonial-quote">"We could really get more qualified list of people"</div>
+                        </div>
                         <div class="testimonial-play">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3"/>
@@ -1244,18 +2055,20 @@
                     </div>
                     <div class="testimonial-content">
                         <div class="testimonial-author">
-                            <div class="testimonial-logo">TF</div>
+                            <div class="testimonial-logo">LM</div>
                             <div class="testimonial-info">
-                                <h4>James Mitchell - TechFlow</h4>
-                                <span>CEO & Founder</span>
+                                <h4>Yee Lin Loke - Lyl Marketing</h4>
+                                <span>Director & Digital Strategist</span>
                             </div>
                         </div>
                         <p class="testimonial-text">"We got so many leads that our client came back to us and mentioned they don't have enough people to follow up with all these people!"</p>
                     </div>
                 </div>
                 <div class="testimonial-card fade-in stagger-1">
-                    <div class="testimonial-video" style="background: linear-gradient(135deg, var(--mint-light), var(--teal-light));">
-                        <div class="testimonial-video-text">"It's GREAT!"</div>
+                    <div class="testimonial-video gradient-2">
+                        <div class="testimonial-video-overlay">
+                            <div class="testimonial-quote">"It's GREAT!"</div>
+                        </div>
                         <div class="testimonial-play">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3"/>
@@ -1264,9 +2077,9 @@
                     </div>
                     <div class="testimonial-content">
                         <div class="testimonial-author">
-                            <div class="testimonial-logo">BC</div>
+                            <div class="testimonial-logo">NV</div>
                             <div class="testimonial-info">
-                                <h4>Sarah Kim - Bloom Commerce</h4>
+                                <h4>Joe DeWulf - Novel</h4>
                                 <span>Co-Founder</span>
                             </div>
                         </div>
@@ -1274,8 +2087,10 @@
                     </div>
                 </div>
                 <div class="testimonial-card fade-in stagger-2">
-                    <div class="testimonial-video" style="background: linear-gradient(135deg, var(--purple-light), var(--teal-light));">
-                        <div class="testimonial-video-text">"Knowledge is incredible"</div>
+                    <div class="testimonial-video gradient-3">
+                        <div class="testimonial-video-overlay">
+                            <div class="testimonial-quote">"Knowledge is incredible"</div>
+                        </div>
                         <div class="testimonial-play">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3"/>
@@ -1284,40 +2099,47 @@
                     </div>
                     <div class="testimonial-content">
                         <div class="testimonial-author">
-                            <div class="testimonial-logo">NP</div>
+                            <div class="testimonial-logo">FD</div>
                             <div class="testimonial-info">
-                                <h4>Robert Park - Nexus Partners</h4>
-                                <span>VP Sales</span>
+                                <h4>Max Gowing - Field Day</h4>
+                                <span>CEO and Founder</span>
                             </div>
                         </div>
-                        <p class="testimonial-text">"Their knowledge of the platforms is incredible. The personalized messages at scale have brought us good quality leads."</p>
+                        <p class="testimonial-text">"Airr Digital's knowledge of the platforms is incredible and the Clay tables they build are fantastic."</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Email CTA -->
+    <section style="padding: 4rem 3rem; background: var(--cream);">
+        <div class="email-cta fade-in" style="max-width: 520px; margin: 0 auto;">
+            <input type="email" placeholder="Enter your work email">
+            <button>BOOK A CALL</button>
+        </div>
+    </section>
+
     <!-- Features Grid -->
     <section class="features">
         <div class="features-container">
-            <div class="features-header">
-                <p>500+ growth teams working with</p>
-                <h2><em>Airr Digital</em></h2>
+            <div class="section-header fade-in">
+                <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; margin-bottom: 0.5rem;">Where we shine and helped</p>
+                <h2>500+ GTM teams with</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-item fade-in">
                     <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <circle cx="12" cy="12" r="3"/>
-                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
                     </svg>
                     <h3>GTM Flywheel Integration</h3>
-                    <p>30M+ organic LinkedIn views. Millions spent profitably on ads & 10,000s prospecting meetings booked.</p>
+                    <p>30M+ organic LinkedIn views. Millions of $ spent profitably on ads & 10,000s prospecting meetings booked.</p>
                 </div>
                 <div class="feature-item fade-in stagger-1">
                     <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                        <polyline points="2 17 12 22 22 17"/>
-                        <polyline points="2 12 12 17 22 12"/>
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
                     </svg>
                     <h3>Clay Implementation</h3>
                     <p>We're only 1 of 4 Elite Studio Clay Expert. This is the highest tier within Clay's partner program.</p>
@@ -1333,19 +2155,18 @@
                 </div>
                 <div class="feature-item fade-in stagger-1">
                     <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                     </svg>
                     <h3>Speed-to-Market</h3>
                     <p>No need to wait 6 weeks to launch. Your first campaign is ready to go 2 weeks after signing.</p>
                 </div>
                 <div class="feature-item fade-in stagger-2">
                     <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 16v-4"/>
-                        <path d="M12 8h.01"/>
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"/>
                     </svg>
                     <h3>Precise Data</h3>
-                    <p>We believe in tight ICP definition, accurate sourcing & clean data enrichment. 10+ software tools used.</p>
+                    <p>We believe in tight ICP definition, accurate sourcing & clean data enrichment. 10+ software just for this.</p>
                 </div>
                 <div class="feature-item fade-in stagger-3">
                     <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1354,7 +2175,82 @@
                         <line x1="6" y1="20" x2="6" y2="14"/>
                     </svg>
                     <h3>Full-Transparency Reporting</h3>
-                    <p>Weekly live dashboards with granular metrics: deliverability, engagement, pipeline, infrastructure health.</p>
+                    <p>You get weekly live dashboards with granular metrics: deliverability, engagement, pipeline, infrastructure health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <div class="timeline-container">
+            <div class="section-header fade-in">
+                <h2><em>Your results timeline</em><br>what happens after onboarding</h2>
+            </div>
+
+            <div class="timeline-row fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-week">Week 1 & 2:</div>
+                    <div class="timeline-title">Define & Setup</div>
+                    <p class="timeline-description">Build the foundations of your outbound infrastructure. We'll setup your email domains, warm accounts, and define your ICP matrix.</p>
+                </div>
+                <div class="timeline-visual grid-bg">
+                    <div class="timeline-diagram">
+                        <div class="timeline-node highlighted">Your first campaigns hit the market</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-branches">
+                            <div class="timeline-branch">
+                                <div class="timeline-branch-card">
+                                    <h4><span class="status-dot green"></span> ContentIQ Live</h4>
+                                    <ul>
+                                        <li>LinkedIn posts</li>
+                                        <li>Visuals/carousels</li>
+                                        <li>Comment signals</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-branch">
+                                <div class="timeline-branch-card">
+                                    <h4><span class="status-dot purple"></span> ABM Ads Running</h4>
+                                    <ul>
+                                        <li>TOF/MOF/BOF ads</li>
+                                        <li>Retargeting pools</li>
+                                        <li>Thought-leader ads</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-branch">
+                                <div class="timeline-branch-card">
+                                    <h4><span class="status-dot teal"></span> Outbound Sequences</h4>
+                                    <ul>
+                                        <li>Email + LinkedIn</li>
+                                        <li>Positive replies to Slack</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-node">Actionable insights inform next sprint.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-row fade-in stagger-1">
+                <div class="timeline-content">
+                    <div class="timeline-week">Weeks 3 & 4:</div>
+                    <div class="timeline-title">Create & Launch</div>
+                    <p class="timeline-description">Craft your email sequences and build your lead lists. We'll start running your first campaigns and optimize based on initial results.</p>
+                </div>
+                <div class="timeline-visual grid-bg">
+                    <div class="timeline-diagram">
+                        <div class="timeline-node highlighted">Meeting Booked</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-node">Sales Process</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-node" style="background: var(--black); color: white; border-color: var(--black);">
+                            ✓ Closed Won
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1363,9 +2259,9 @@
     <!-- CTA Section -->
     <section class="cta" id="contact">
         <div class="cta-container">
-            <h2><em>Ready to build your</em><br>growth engine?</h2>
-            <p>Book a strategy call. We'll audit your current setup and show you exactly where the opportunities are.</p>
-            <div class="email-cta">
+            <h2 class="fade-in"><em>Ready to build your</em><br>growth engine?</h2>
+            <p class="fade-in stagger-1">Book a strategy call. We'll audit your current setup and show you exactly where the opportunities are.</p>
+            <div class="email-cta fade-in stagger-2">
                 <input type="email" placeholder="Enter your work email">
                 <button>RECEIVE AIRR'S GTM PLAYBOOK</button>
             </div>
@@ -1387,7 +2283,7 @@
                     </a>
                     <p>All there is to know about the latest growth and prospecting techniques</p>
                     <div class="footer-newsletter">
-                        <input type="email" placeholder="Get our best tips in your inbox">
+                        <input type="email" placeholder="Get our best tips">
                         <button>SUBSCRIBE</button>
                     </div>
                 </div>
@@ -1417,39 +2313,17 @@
                         <li><a href="#">Data Sources</a></li>
                     </ul>
                 </div>
-                <div class="footer-links footer-contact">
+                <div class="footer-links">
                     <h4>Get In Touch</h4>
                     <ul>
-                        <li>
-                            <a href="mailto:hello@airrdigital.com">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                                hello@airrdigital.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                                LinkedIn
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                </svg>
-                                @AirrDigital
-                            </a>
-                        </li>
+                        <li><a href="mailto:hello@airrdigital.com">hello@airrdigital.com</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">@AirrDigital</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright 2025 &copy; Airr Digital LLC</p>
+                <p>Copyright 2025 © Airr Digital LLC</p>
                 <p>All rights reserved.</p>
             </div>
         </div>
@@ -1470,7 +2344,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(el => {
+        document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
             observer.observe(el);
         });
 
@@ -1485,6 +2359,33 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Parallax effect on scroll
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const decorations = document.querySelectorAll('.hero-decoration');
+                    decorations.forEach((dec, i) => {
+                        const speed = 0.1 + (i * 0.05);
+                        dec.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Add hover effects to flow pills
+        document.querySelectorAll('.flow-pill').forEach(pill => {
+            pill.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            pill.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
         });
     </script>
