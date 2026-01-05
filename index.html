@@ -109,6 +109,17 @@
             right: 48px;
         }
 
+        /* Center vertical line */
+        .grid-center-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--gray-300);
+            transform: translateX(-50%);
+        }
+
         /* Section with architectural frame */
         .framed-section {
             position: relative;
@@ -127,12 +138,12 @@
             position: relative;
         }
 
-        /* Inner vertical lines for multi-column layouts */
-        .frame-columns {
+        /* Grid columns with vertical dividers - 2 columns */
+        .grid-cols-2 {
             position: relative;
         }
 
-        .frame-columns::before {
+        .grid-cols-2::before {
             content: '';
             position: absolute;
             left: 50%;
@@ -141,6 +152,57 @@
             width: 1px;
             background: var(--gray-300);
             transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Grid columns with vertical dividers - 3 columns */
+        .grid-cols-3 {
+            position: relative;
+        }
+
+        .grid-cols-3::before,
+        .grid-cols-3::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--gray-300);
+            z-index: 1;
+        }
+
+        .grid-cols-3::before {
+            left: 33.333%;
+        }
+
+        .grid-cols-3::after {
+            left: 66.666%;
+        }
+
+        /* Grid columns with vertical dividers - 4 columns */
+        .grid-cols-4 {
+            position: relative;
+        }
+
+        .grid-cols-4 .grid-col-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--gray-300);
+            z-index: 1;
+        }
+
+        .grid-cols-4 .grid-col-line:nth-child(1) { left: 25%; }
+        .grid-cols-4 .grid-col-line:nth-child(2) { left: 50%; }
+        .grid-cols-4 .grid-col-line:nth-child(3) { left: 75%; }
+
+        /* Horizontal sub-divider within sections */
+        .frame-row-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--gray-300);
+            margin: 3rem 0;
         }
 
         /* Navigation */
@@ -1698,7 +1760,9 @@
 <body>
     <!-- Architectural Grid Frame -->
     <div class="grid-frame">
-        <div class="grid-frame-inner"></div>
+        <div class="grid-frame-inner">
+            <div class="grid-center-line"></div>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -2111,7 +2175,7 @@
             <div class="section-header fade-in">
                 <h2><em>Don't take our word for it</em><br>Hear it from them</h2>
             </div>
-            <div class="testimonials-grid">
+            <div class="testimonials-grid grid-cols-3">
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-video gradient-1">
                         <div class="testimonial-video-overlay">
@@ -2199,7 +2263,7 @@
                 <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; margin-bottom: 0.5rem;">Where we shine and helped</p>
                 <h2>500+ GTM teams with</h2>
             </div>
-            <div class="features-grid">
+            <div class="features-grid grid-cols-3">
                 <div class="feature-item fade-in">
                     <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <circle cx="12" cy="12" r="3"/>
@@ -2261,7 +2325,7 @@
                 <h2><em>Your results timeline</em><br>what happens after onboarding</h2>
             </div>
 
-            <div class="timeline-row fade-in">
+            <div class="timeline-row grid-cols-2 fade-in">
                 <div class="timeline-content">
                     <div class="timeline-week">Week 1 & 2:</div>
                     <div class="timeline-title">Define & Setup</div>
@@ -2308,7 +2372,7 @@
                 </div>
             </div>
 
-            <div class="timeline-row fade-in stagger-1">
+            <div class="timeline-row grid-cols-2 fade-in stagger-1">
                 <div class="timeline-content">
                     <div class="timeline-week">Weeks 3 & 4:</div>
                     <div class="timeline-title">Create & Launch</div>
