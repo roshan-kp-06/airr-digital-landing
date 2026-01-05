@@ -70,8 +70,8 @@
             overflow-x: hidden;
         }
 
-        /* Grid Lines Background Pattern - Vertical columns like ColdIQ */
-        .grid-lines {
+        /* Architectural Grid Frame - Blueprint style */
+        .grid-frame {
             position: fixed;
             top: 0;
             left: 0;
@@ -83,26 +83,64 @@
             justify-content: center;
         }
 
-        .grid-lines-inner {
+        .grid-frame-inner {
             width: 100%;
             max-width: 1400px;
             height: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 3rem;
+            position: relative;
         }
 
-        .grid-line {
+        /* Left and right vertical border lines */
+        .grid-frame-inner::before,
+        .grid-frame-inner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
             width: 1px;
-            height: 100%;
             background: var(--gray-200);
         }
 
-        /* Horizontal section dividers */
-        .section-divider {
-            width: 100%;
-            height: 1px;
+        .grid-frame-inner::before {
+            left: 48px;
+        }
+
+        .grid-frame-inner::after {
+            right: 48px;
+        }
+
+        /* Section with architectural frame */
+        .framed-section {
+            position: relative;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .framed-section:last-of-type {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        /* Content container within framed sections */
+        .frame-content {
+            max-width: 1304px;
+            margin: 0 auto;
+            padding: 0 48px;
+            position: relative;
+        }
+
+        /* Inner vertical lines for multi-column layouts */
+        .frame-columns {
+            position: relative;
+        }
+
+        .frame-columns::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
             background: var(--gray-200);
+            transform: translateX(-50%);
         }
 
         /* Navigation */
@@ -1658,15 +1696,9 @@
     </style>
 </head>
 <body>
-    <!-- Grid Lines Background -->
-    <div class="grid-lines">
-        <div class="grid-lines-inner">
-            <div class="grid-line"></div>
-            <div class="grid-line"></div>
-            <div class="grid-line"></div>
-            <div class="grid-line"></div>
-            <div class="grid-line"></div>
-        </div>
+    <!-- Architectural Grid Frame -->
+    <div class="grid-frame">
+        <div class="grid-frame-inner"></div>
     </div>
 
     <!-- Navigation -->
@@ -1701,7 +1733,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero framed-section">
         <div class="hero-decoration decoration-circle decoration-circle-1"></div>
         <div class="hero-decoration decoration-circle decoration-circle-2"></div>
 
@@ -1734,10 +1766,9 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- Logo Cloud -->
-    <section class="logo-cloud">
+    <section class="logo-cloud framed-section">
         <p class="logo-cloud-title">GTM Teams that trust Airr Digital to grow their Pipelines</p>
         <div class="logo-grid">
             <div class="logo-item">
@@ -1782,10 +1813,9 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- Services Section with Flowcharts -->
-    <section class="services" id="services">
+    <section class="services framed-section" id="services">
         <div class="services-container">
             <div class="section-header fade-in">
                 <h2><em>3 ways we help you grow</em><br>content, ads & outbound</h2>
@@ -1925,10 +1955,9 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- GTM Flywheel Section -->
-    <section class="flywheel-section">
+    <section class="flywheel-section framed-section">
         <div class="flywheel-container">
             <div class="flywheel-wrapper fade-in">
                 <svg class="flywheel-svg" viewBox="0 0 400 400">
@@ -1986,10 +2015,9 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- Case Study Section -->
-    <section class="case-studies" id="results">
+    <section class="case-studies framed-section" id="results">
         <div class="section-header fade-in">
             <h2><em>Find out for yourself how we generate</em><br>demand across the entire funnel</h2>
         </div>
@@ -2076,10 +2104,9 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials framed-section" id="testimonials">
         <div class="testimonials-container">
             <div class="section-header fade-in">
                 <h2><em>Don't take our word for it</em><br>Hear it from them</h2>
@@ -2155,20 +2182,18 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- Email CTA -->
-    <section style="padding: 4rem 3rem; background: var(--cream);">
+    <section class="framed-section" style="padding: 4rem 3rem; background: var(--cream);">
         <div class="email-cta fade-in" style="max-width: 520px; margin: 0 auto;">
             <input type="email" placeholder="Enter your work email">
             <button>BOOK A CALL</button>
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- Features Grid -->
-    <section class="features">
+    <section class="features framed-section">
         <div class="features-container">
             <div class="section-header fade-in">
                 <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; margin-bottom: 0.5rem;">Where we shine and helped</p>
@@ -2228,10 +2253,9 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- Timeline Section -->
-    <section class="timeline">
+    <section class="timeline framed-section">
         <div class="timeline-container">
             <div class="section-header fade-in">
                 <h2><em>Your results timeline</em><br>what happens after onboarding</h2>
@@ -2305,10 +2329,9 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
+    
     <!-- CTA Section -->
-    <section class="cta" id="contact">
+    <section class="cta framed-section" id="contact">
         <div class="cta-container">
             <h2 class="fade-in"><em>Ready to build your</em><br>growth engine?</h2>
             <p class="fade-in stagger-1">Book a strategy call. We'll audit your current setup and show you exactly where the opportunities are.</p>
