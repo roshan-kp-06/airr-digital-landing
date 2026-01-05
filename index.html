@@ -90,10 +90,9 @@
             position: relative;
         }
 
-        /* Left and right vertical border lines */
-        .grid-frame-inner::before,
-        .grid-frame-inner::after {
-            content: '';
+        /* Outer vertical frame lines - LEFT side */
+        .grid-line-left-outer,
+        .grid-line-left-inner {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -101,23 +100,30 @@
             background: var(--gray-300);
         }
 
-        .grid-frame-inner::before {
+        .grid-line-left-outer {
+            left: 0;
+        }
+
+        .grid-line-left-inner {
             left: 48px;
         }
 
-        .grid-frame-inner::after {
-            right: 48px;
-        }
-
-        /* Center vertical line */
-        .grid-center-line {
+        /* Outer vertical frame lines - RIGHT side */
+        .grid-line-right-outer,
+        .grid-line-right-inner {
             position: absolute;
-            left: 50%;
             top: 0;
             bottom: 0;
             width: 1px;
             background: var(--gray-300);
-            transform: translateX(-50%);
+        }
+
+        .grid-line-right-outer {
+            right: 0;
+        }
+
+        .grid-line-right-inner {
+            right: 48px;
         }
 
         /* Section with architectural frame */
@@ -1758,10 +1764,15 @@
     </style>
 </head>
 <body>
-    <!-- Architectural Grid Frame -->
+    <!-- Architectural Grid Frame - Lines on OUTSIDE framing content -->
     <div class="grid-frame">
         <div class="grid-frame-inner">
-            <div class="grid-center-line"></div>
+            <!-- Left side frame lines -->
+            <div class="grid-line-left-outer"></div>
+            <div class="grid-line-left-inner"></div>
+            <!-- Right side frame lines -->
+            <div class="grid-line-right-outer"></div>
+            <div class="grid-line-right-inner"></div>
         </div>
     </div>
 
@@ -2175,7 +2186,7 @@
             <div class="section-header fade-in">
                 <h2><em>Don't take our word for it</em><br>Hear it from them</h2>
             </div>
-            <div class="testimonials-grid grid-cols-3">
+            <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-video gradient-1">
                         <div class="testimonial-video-overlay">
@@ -2263,7 +2274,7 @@
                 <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; margin-bottom: 0.5rem;">Where we shine and helped</p>
                 <h2>500+ GTM teams with</h2>
             </div>
-            <div class="features-grid grid-cols-3">
+            <div class="features-grid">
                 <div class="feature-item fade-in">
                     <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <circle cx="12" cy="12" r="3"/>
@@ -2325,7 +2336,7 @@
                 <h2><em>Your results timeline</em><br>what happens after onboarding</h2>
             </div>
 
-            <div class="timeline-row grid-cols-2 fade-in">
+            <div class="timeline-row fade-in">
                 <div class="timeline-content">
                     <div class="timeline-week">Week 1 & 2:</div>
                     <div class="timeline-title">Define & Setup</div>
@@ -2372,7 +2383,7 @@
                 </div>
             </div>
 
-            <div class="timeline-row grid-cols-2 fade-in stagger-1">
+            <div class="timeline-row fade-in stagger-1">
                 <div class="timeline-content">
                     <div class="timeline-week">Weeks 3 & 4:</div>
                     <div class="timeline-title">Create & Launch</div>
