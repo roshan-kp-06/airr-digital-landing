@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airr Digital - Tomorrow's Growth Systems Built for You Today</title>
-    <meta name="description" content="We build B2B Revenue Engines that sell for you. Performance marketing, paid ads, and cold outreach systems.">
+    <title>Airr Digital - B2B SaaS Paid Ads Agency | Acquire Customers Profitably</title>
+    <meta name="description" content="We help B2B SaaS companies acquire customers profitably on ads, halve their CAC and add $1M+ in ARR within 12 weeks.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Airr Digital - B2B SaaS Paid Ads Agency">
+    <meta property="og:description" content="Acquire customers profitably on ads. Halve your CAC. Add $1M+ ARR in 12 weeks.">
+    <meta property="og:type" content="website">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -24,32 +29,17 @@
             --gray-500: #6b6660;
             --gray-600: #4a4640;
 
-            /* Brand colors */
             --teal: #14B8A6;
             --teal-light: #CCFBF1;
-            --teal-bg: #E6FAF7;
-            --purple: #8B5CF6;
-            --purple-light: #EDE9FE;
-            --purple-bg: #F5F3FF;
             --green: #22C55E;
             --green-light: #DCFCE7;
-            --green-bg: #F0FDF4;
-            --pink: #EC4899;
-            --pink-light: #FCE7F3;
-            --pink-bg: #FDF2F8;
             --blue: #3B82F6;
-            --blue-light: #DBEAFE;
-            --blue-bg: #EFF6FF;
-            --orange: #F97316;
-            --orange-light: #FFEDD5;
-            --yellow: #EAB308;
-            --yellow-light: #FEF9C3;
+            --purple: #8B5CF6;
 
             --font-serif: 'Playfair Display', Georgia, serif;
             --font-sans: 'Inter', -apple-system, sans-serif;
 
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         * {
@@ -70,7 +60,7 @@
             overflow-x: hidden;
         }
 
-        /* Architectural Grid Frame - Blueprint style */
+        /* Architectural Grid Frame */
         .grid-frame {
             position: fixed;
             top: 0;
@@ -90,25 +80,8 @@
             position: relative;
         }
 
-        /* Outer vertical frame lines - LEFT side */
         .grid-line-left-outer,
-        .grid-line-left-inner {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--gray-300);
-        }
-
-        .grid-line-left-outer {
-            left: 0;
-        }
-
-        .grid-line-left-inner {
-            left: 48px;
-        }
-
-        /* Outer vertical frame lines - RIGHT side */
+        .grid-line-left-inner,
         .grid-line-right-outer,
         .grid-line-right-inner {
             position: absolute;
@@ -118,97 +91,21 @@
             background: var(--gray-300);
         }
 
-        .grid-line-right-outer {
-            right: 0;
-        }
+        .grid-line-left-outer { left: 0; }
+        .grid-line-left-inner { left: 48px; }
+        .grid-line-right-outer { right: 0; }
+        .grid-line-right-inner { right: 48px; }
 
-        .grid-line-right-inner {
-            right: 48px;
-        }
-
-        /* Section with architectural frame */
-        .framed-section {
+        /* Section styling */
+        .section {
             position: relative;
             border-top: 1px solid var(--gray-300);
         }
 
-        .framed-section:last-of-type {
-            border-bottom: 1px solid var(--gray-300);
-        }
-
-        /* Content container within framed sections */
-        .frame-content {
-            max-width: 1304px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 48px;
-            position: relative;
-        }
-
-        /* Grid columns with vertical dividers - 2 columns */
-        .grid-cols-2 {
-            position: relative;
-        }
-
-        .grid-cols-2::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--gray-300);
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        /* Grid columns with vertical dividers - 3 columns */
-        .grid-cols-3 {
-            position: relative;
-        }
-
-        .grid-cols-3::before,
-        .grid-cols-3::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--gray-300);
-            z-index: 1;
-        }
-
-        .grid-cols-3::before {
-            left: 33.333%;
-        }
-
-        .grid-cols-3::after {
-            left: 66.666%;
-        }
-
-        /* Grid columns with vertical dividers - 4 columns */
-        .grid-cols-4 {
-            position: relative;
-        }
-
-        .grid-cols-4 .grid-col-line {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--gray-300);
-            z-index: 1;
-        }
-
-        .grid-cols-4 .grid-col-line:nth-child(1) { left: 25%; }
-        .grid-cols-4 .grid-col-line:nth-child(2) { left: 50%; }
-        .grid-cols-4 .grid-col-line:nth-child(3) { left: 75%; }
-
-        /* Horizontal sub-divider within sections */
-        .frame-row-divider {
-            width: 100%;
-            height: 1px;
-            background: var(--gray-300);
-            margin: 3rem 0;
+            padding: 0 2rem;
         }
 
         /* Navigation */
@@ -224,68 +121,40 @@
             align-items: center;
             background: var(--cream);
             border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(245, 241, 235, 0.95);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-family: var(--font-sans);
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--black);
-            text-decoration: none;
-            letter-spacing: 0.12em;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
         }
 
-        .logo-icon {
-            width: 32px;
-            height: 32px;
+        .logo img {
+            height: 28px;
+            width: auto;
         }
 
-        .nav-center {
+        .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
         }
 
-        .nav-center a {
+        .nav-links a {
             color: var(--gray-600);
             text-decoration: none;
             font-size: 0.9375rem;
             font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
         }
 
-        .nav-center a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--black);
-            transition: width 0.3s ease;
-        }
-
-        .nav-center a:hover::after {
-            width: 100%;
-        }
-
-        .nav-center a:hover {
+        .nav-links a:hover {
             color: var(--black);
-        }
-
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .nav-dropdown-icon {
-            width: 12px;
-            height: 12px;
-            margin-left: 4px;
-            transition: transform 0.3s ease;
         }
 
         .nav-cta {
@@ -293,7 +162,7 @@
             color: var(--white);
             padding: 0.75rem 1.5rem;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.875rem;
             border-radius: 6px;
             transition: all 0.3s ease;
@@ -302,7 +171,14 @@
         .nav-cta:hover {
             background: var(--gray-600);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
         }
 
         /* Hero Section */
@@ -310,52 +186,34 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 7rem 2rem 4rem;
-            position: relative;
+            padding: 8rem 2rem 4rem;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
             max-width: 900px;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .pre-headline {
+            display: inline-block;
             background: var(--white);
             border: 1px solid var(--gray-200);
             padding: 0.5rem 1.25rem;
             border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.8125rem;
             color: var(--gray-500);
             margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
             font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .hero-badge svg {
-            width: 14px;
-            height: 14px;
         }
 
         .hero h1 {
             font-family: var(--font-serif);
-            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
             font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 1.25rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
             color: var(--black);
         }
 
@@ -367,17 +225,43 @@
             font-size: 1.125rem;
             color: var(--gray-500);
             margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
 
-        /* Video Container */
-        .hero-video-wrapper {
-            position: relative;
-            width: 100%;
+        .btn-primary {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--gray-600);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* VSL Section */
+        .vsl-section {
+            padding: 4rem 2rem;
+        }
+
+        .vsl-container {
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .hero-video {
+        .video-placeholder {
             width: 100%;
             aspect-ratio: 16/9;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -388,29 +272,15 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .hero-video::before {
+        .video-placeholder::before {
             content: '';
             position: absolute;
             inset: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23333" width="100" height="100"/><rect fill="%23222" x="0" y="0" width="50" height="50"/><rect fill="%23222" x="50" y="50" width="50" height="50"/></svg>');
             background-size: 20px 20px;
             opacity: 0.1;
-        }
-
-        .video-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            backdrop-filter: blur(4px);
         }
 
         .play-button {
@@ -422,28 +292,13 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s var(--ease-bounce);
+            transition: all 0.3s ease;
             position: relative;
             z-index: 2;
         }
 
-        .play-button::before {
-            content: '';
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 2px solid rgba(255,255,255,0.3);
-            animation: pulse-ring 2s ease-out infinite;
-        }
-
-        @keyframes pulse-ring {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.3); opacity: 0; }
-        }
-
         .play-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 10px 40px rgba(255,255,255,0.3);
         }
 
         .play-button svg {
@@ -453,127 +308,81 @@
             color: var(--black);
         }
 
-        /* Floating Decorations */
-        .hero-decoration {
-            position: absolute;
-            pointer-events: none;
+        /* CTA Block */
+        .cta-block {
+            padding: 4rem 2rem;
+            text-align: center;
         }
 
-        .decoration-circle {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 1px dashed var(--gray-300);
-            opacity: 0.5;
+        .cta-block .btn-primary {
+            margin-bottom: 1rem;
         }
 
-        .decoration-circle-1 {
-            top: 10%;
-            left: -150px;
-            animation: rotate-slow 60s linear infinite;
+        .microcopy {
+            font-size: 0.875rem;
+            color: var(--gray-500);
         }
 
-        .decoration-circle-2 {
-            bottom: 10%;
-            right: -150px;
-            animation: rotate-slow 60s linear infinite reverse;
+        /* Logo Scroll */
+        .logo-scroll {
+            padding: 4rem 2rem;
+            overflow: hidden;
         }
 
-        @keyframes rotate-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Logo Cloud */
-        .logo-cloud {
-            padding: 4rem 3rem;
-            background: var(--cream);
-            border-top: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .logo-cloud-title {
+        .logo-scroll h3 {
             text-align: center;
             font-size: 0.875rem;
             color: var(--gray-500);
             margin-bottom: 2rem;
+            font-weight: 500;
         }
 
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 0;
-            max-width: 1200px;
-            margin: 0 auto;
+        .logo-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .logo-item {
-            padding: 1.5rem 2rem;
+            flex-shrink: 0;
+            padding: 1rem 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-right: 1px solid var(--gray-200);
-            position: relative;
-            transition: all 0.3s ease;
         }
 
-        .logo-item:nth-child(6n) {
-            border-right: none;
-        }
-
-        .logo-item:nth-child(n+7) {
-            border-top: 1px solid var(--gray-200);
-        }
-
-        .logo-item:hover {
-            background: var(--white);
-        }
-
-        .logo-item img {
-            height: 24px;
-            opacity: 0.6;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
-
-        .logo-item:hover img {
-            opacity: 1;
-            filter: grayscale(0%);
-        }
-
-        .logo-placeholder {
+        .logo-item span {
             font-weight: 600;
-            font-size: 0.875rem;
+            font-size: 0.9375rem;
             color: var(--gray-400);
-            letter-spacing: 0.05em;
+            white-space: nowrap;
+            transition: color 0.3s ease;
         }
 
-        .case-study-badge {
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
-            background: var(--teal);
-            color: white;
-            font-size: 0.625rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .logo-item:hover span {
+            color: var(--black);
         }
 
         /* Section Headers */
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-header h2 {
             font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 400;
             line-height: 1.2;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .section-header h2 em {
@@ -583,641 +392,235 @@
         .section-header p {
             font-size: 1rem;
             color: var(--gray-500);
-        }
-
-        /* Services Section with Flowcharts */
-        .services {
-            padding: 6rem 3rem;
-            background: var(--cream);
-        }
-
-        .services-container {
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .services-columns {
+        /* Why Airr Digital */
+        .why-section {
+            padding: 6rem 2rem;
+        }
+
+        .reasons-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .reason-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .service-column {
+            border-radius: 12px;
             padding: 2rem;
-            border-right: 1px solid var(--gray-200);
-            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .service-column:last-child {
-            border-right: none;
+        .reason-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
         }
 
-        .service-column h3 {
+        .reason-card h3 {
             font-family: var(--font-sans);
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
             color: var(--black);
         }
 
-        .service-column > p {
+        .reason-card p {
             font-size: 0.9375rem;
             color: var(--gray-500);
-            margin-bottom: 2rem;
             line-height: 1.6;
         }
 
-        /* Flowchart */
-        .flowchart {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            position: relative;
+        /* Case Studies */
+        .case-studies {
+            padding: 6rem 2rem;
         }
 
-        .flowchart::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            border-left: 2px dashed var(--gray-300);
-            transform: translateX(-50%);
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .flow-row {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 0.75rem 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .flow-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
+        .case-study-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
-            padding: 0.5rem 0.875rem;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--gray-600);
+            border-radius: 12px;
+            overflow: hidden;
             transition: all 0.3s ease;
-            white-space: nowrap;
         }
 
-        .flow-pill:hover {
-            border-color: var(--teal);
-            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.15);
-            transform: translateY(-2px);
+        .case-study-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
         }
 
-        .flow-pill svg, .flow-pill img {
-            width: 14px;
-            height: 14px;
-        }
-
-        .flow-pill.has-icons {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .flow-icons {
-            display: flex;
-            gap: 4px;
-            margin-top: 4px;
-        }
-
-        .flow-icons span {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-        }
-
-        /* Tier Pills */
-        .tier-row {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            margin: 1rem 0;
-        }
-
-        .tier-pill {
-            padding: 0.375rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .tier-1 { background: var(--teal); color: white; }
-        .tier-2 { background: var(--purple); color: white; }
-        .tier-3 { background: var(--green); color: white; }
-        .tier-tof { background: var(--teal); color: white; }
-        .tier-mof { background: var(--purple); color: white; }
-        .tier-bof { background: var(--green); color: white; }
-
-        /* Outcome Row */
-        .outcome-row {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-
-        .outcome-pill {
+        .case-study-header {
             background: var(--gray-100);
-            border: 1px solid var(--gray-200);
-            padding: 0.5rem 0.875rem;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            color: var(--gray-600);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
         }
 
-        /* Channel Buttons */
-        .channel-row {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .channel-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.625rem 1rem;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .channel-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        .channel-btn.green { background: var(--green); }
-        .channel-btn.purple { background: var(--purple); }
-        .channel-btn.blue { background: var(--blue); }
-        .channel-btn.teal { background: var(--teal); }
-
-        /* GTM Flywheel Section */
-        .flywheel-section {
-            padding: 6rem 3rem;
-            background: var(--cream);
-            position: relative;
-        }
-
-        .flywheel-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .flywheel-wrapper {
-            position: relative;
-            width: 420px;
-            height: 420px;
-            margin: 3rem 0;
-        }
-
-        .flywheel-svg {
-            width: 100%;
-            height: 100%;
-            animation: flywheel-spin 30s linear infinite;
-        }
-
-        @keyframes flywheel-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .flywheel-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 180px;
-            height: 180px;
-            background: var(--cream);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 0 40px rgba(0,0,0,0.05);
-        }
-
-        .flywheel-center h3 {
-            font-family: var(--font-sans);
+        .case-study-header h4 {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
 
-        .flywheel-center p {
-            font-size: 0.75rem;
+        .case-study-header span {
+            font-size: 0.8125rem;
             color: var(--gray-500);
-            line-height: 1.4;
         }
 
-        /* Flywheel Labels */
-        .flywheel-label {
-            position: absolute;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            padding: 0.875rem 1.125rem;
-            border-radius: 10px;
-            font-size: 0.8125rem;
-            color: var(--gray-600);
-            max-width: 200px;
-            text-align: left;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            line-height: 1.5;
+        .case-study-body {
+            padding: 1.5rem;
         }
 
-        .flywheel-label:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .flywheel-label::before {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 1px;
-            border-top: 2px dashed var(--teal);
-        }
-
-        .flywheel-label.right {
-            right: -220px;
-            top: 20%;
-        }
-
-        .flywheel-label.right::before {
-            left: -62px;
-            top: 50%;
-        }
-
-        .flywheel-label.left {
-            left: -220px;
-            bottom: 30%;
-        }
-
-        .flywheel-label.left::before {
-            right: -62px;
-            top: 50%;
-        }
-
-        .flywheel-label.bottom {
-            bottom: -80px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .flywheel-label.bottom::before {
-            display: none;
-        }
-
-        .flywheel-label.bottom:hover {
-            transform: translateX(-50%) translateY(-4px);
-        }
-
-        /* Email CTA */
-        .email-cta {
-            display: flex;
-            gap: 0;
-            max-width: 520px;
-            width: 100%;
-            margin: 2rem auto 0;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .email-cta:focus-within {
-            border-color: var(--teal);
-            box-shadow: 0 4px 20px rgba(20, 184, 166, 0.15);
-        }
-
-        .email-cta input {
-            flex: 1;
-            padding: 1rem 1.25rem;
-            border: none;
-            font-size: 0.9375rem;
-            font-family: var(--font-sans);
-            background: transparent;
-            outline: none;
-        }
-
-        .email-cta input::placeholder {
-            color: var(--gray-400);
-        }
-
-        .email-cta button {
-            background: var(--black);
-            color: var(--white);
-            padding: 1rem 1.75rem;
-            border: none;
-            font-size: 0.8125rem;
+        .case-study-body h5 {
+            font-size: 0.75rem;
             font-weight: 600;
-            font-family: var(--font-sans);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-400);
+            margin-bottom: 0.5rem;
         }
 
-        .email-cta button:hover {
-            background: var(--gray-600);
+        .case-study-body p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
         }
 
-        /* Case Study Section */
-        .case-studies {
-            padding: 6rem 3rem;
-            background: var(--cream);
+        .case-study-result {
+            background: var(--green-light);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
         }
 
-        .case-study-card {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
-            align-items: center;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 3rem;
-            overflow: hidden;
+        .case-study-result h5 {
+            color: var(--green);
         }
 
-        .case-study-content h3 {
-            font-family: var(--font-sans);
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: 1.4;
-            margin-bottom: 2rem;
+        .case-study-result p {
+            margin-bottom: 0;
+            font-weight: 500;
             color: var(--black);
         }
 
-        .case-study-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* How It Works */
+        .how-it-works {
+            padding: 6rem 2rem;
+        }
+
+        .process-steps {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
             background: var(--black);
             color: var(--white);
-            padding: 0.875rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .case-study-cta:hover {
-            background: var(--gray-600);
-            transform: translateY(-2px);
-        }
-
-        /* Funnel Infographic */
-        .funnel-infographic {
-            position: relative;
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .funnel-stage {
-            position: relative;
-            padding: 1rem 1.5rem;
-            margin-bottom: 0.75rem;
-            border-radius: 8px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .funnel-stage.teal-bg { background: var(--teal-bg); }
-        .funnel-stage.pink-bg { background: var(--pink-bg); }
-        .funnel-stage.purple-bg { background: var(--purple-bg); }
-        .funnel-stage.blue-bg { background: var(--blue-bg); }
-
-        .funnel-stage-label {
-            position: absolute;
-            left: -80px;
-            top: 50%;
-            transform: translateY(-50%) rotate(-90deg);
-            font-size: 0.625rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--gray-400);
-            white-space: nowrap;
-        }
-
-        .funnel-column {
-            text-align: center;
-        }
-
-        .funnel-column-title {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            color: var(--gray-500);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .funnel-icons {
-            display: flex;
-            gap: 6px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .funnel-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            background: var(--white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            transition: all 0.2s ease;
+            font-weight: 700;
+            font-size: 1.125rem;
         }
 
-        .funnel-icon:hover {
-            transform: scale(1.15);
+        .step-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .step-content p {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            line-height: 1.7;
         }
 
         /* Testimonials */
         .testimonials {
-            padding: 6rem 3rem;
-            background: var(--cream);
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 6rem 2rem;
         }
 
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .testimonial-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
             border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            padding: 2rem;
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        .testimonial-card .quote-icon {
+            font-size: 2rem;
+            color: var(--gray-300);
+            margin-bottom: 1rem;
+            line-height: 1;
         }
 
-        .testimonial-video {
-            width: 100%;
-            aspect-ratio: 16/10;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .testimonial-video.gradient-1 {
-            background: linear-gradient(135deg, #fce7f3 0%, #dbeafe 50%, #ccfbf1 100%);
-        }
-
-        .testimonial-video.gradient-2 {
-            background: linear-gradient(135deg, #dcfce7 0%, #fef9c3 100%);
-        }
-
-        .testimonial-video.gradient-3 {
-            background: linear-gradient(135deg, #ede9fe 0%, #fce7f3 100%);
-        }
-
-        .testimonial-video-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 1.5rem;
-        }
-
-        .testimonial-quote {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: white;
-            text-align: center;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            line-height: 1.3;
-        }
-
-        .testimonial-play {
-            position: absolute;
-            right: 12px;
-            top: 12px;
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-play:hover {
-            transform: scale(1.1);
-        }
-
-        .testimonial-play svg {
-            width: 12px;
-            height: 12px;
-            margin-left: 2px;
-        }
-
-        .testimonial-content {
-            padding: 1.5rem;
-            border-top: 1px solid var(--gray-200);
+        .testimonial-card blockquote {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 1rem;
         }
 
         .testimonial-avatar {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--teal-light), var(--purple-light));
+            background: linear-gradient(135deg, var(--teal-light), var(--gray-200));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.875rem;
             font-weight: 600;
+            font-size: 0.875rem;
             color: var(--gray-600);
-        }
-
-        .testimonial-logo {
-            width: 32px;
-            height: 32px;
-            background: var(--gray-100);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.6875rem;
-            font-weight: 700;
-            color: var(--gray-500);
         }
 
         .testimonial-info h4 {
             font-size: 0.9375rem;
             font-weight: 600;
-            color: var(--black);
         }
 
         .testimonial-info span {
@@ -1225,375 +628,351 @@
             color: var(--gray-500);
         }
 
-        .testimonial-text {
-            font-size: 0.9375rem;
-            color: var(--gray-500);
-            line-height: 1.6;
+        /* Everything You Get */
+        .deliverables {
+            padding: 6rem 2rem;
         }
 
-        /* Features Grid */
-        .features {
-            padding: 6rem 3rem;
-            background: var(--cream);
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
+        .deliverables-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .feature-item {
-            padding: 2rem;
-            border-right: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-            background: var(--gray-100);
-        }
-
-        .feature-item:nth-child(3n) {
-            border-right: none;
-        }
-
-        .feature-item:nth-child(n+4) {
-            border-bottom: none;
-        }
-
-        .feature-icon {
-            width: 28px;
-            height: 28px;
-            margin-bottom: 1rem;
-            color: var(--gray-400);
-        }
-
-        .feature-item h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--black);
-        }
-
-        .feature-item p {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            line-height: 1.6;
-        }
-
-        /* Timeline Section */
-        .timeline {
-            padding: 6rem 3rem;
-            background: var(--cream);
-        }
-
-        .timeline-container {
+            gap: 1.5rem;
             max-width: 1100px;
             margin: 0 auto;
         }
 
-        .timeline-row {
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 0;
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--white);
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-content {
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-right: 1px solid var(--gray-200);
-        }
-
-        .timeline-week {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--black);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--black);
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-description {
-            font-size: 0.9375rem;
-            color: var(--gray-500);
-            line-height: 1.6;
-        }
-
-        .timeline-visual {
-            padding: 2rem;
-            position: relative;
-        }
-
-        .timeline-diagram {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            position: relative;
-        }
-
-        .timeline-node {
+        .deliverable-category {
             background: var(--white);
             border: 1px solid var(--gray-200);
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            font-size: 0.8125rem;
-            font-weight: 500;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .deliverable-category h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .deliverable-category ul {
+            list-style: none;
+        }
+
+        .deliverable-category li {
+            font-size: 0.875rem;
             color: var(--gray-600);
-            position: relative;
-            z-index: 1;
-        }
-
-        .timeline-node.highlighted {
-            background: var(--teal-bg);
-            border-color: var(--teal);
-            color: var(--black);
-        }
-
-        .timeline-connector {
-            width: 2px;
-            height: 30px;
-            border-left: 2px dashed var(--teal);
-        }
-
-        .timeline-branches {
+            padding: 0.5rem 0;
             display: flex;
-            gap: 1rem;
-            position: relative;
-        }
-
-        .timeline-branches::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 15px;
-            border: 2px dashed var(--teal);
-            border-bottom: none;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .timeline-branch {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.5rem;
         }
 
-        .timeline-branch-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 8px;
-            padding: 1rem;
-            min-width: 120px;
-            text-align: center;
+        .deliverable-category li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 600;
+            flex-shrink: 0;
         }
 
-        .timeline-branch-card h4 {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--black);
-            margin-bottom: 0.5rem;
+        /* More Results */
+        .more-results {
+            padding: 6rem 2rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .result-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .result-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-100) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.375rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .timeline-branch-card ul {
-            list-style: none;
-            font-size: 0.6875rem;
-            color: var(--gray-500);
-            text-align: left;
+        .result-image-placeholder {
+            width: 80%;
+            height: 70%;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 0.75rem;
         }
 
-        .timeline-branch-card li {
-            margin-bottom: 0.25rem;
+        .mock-header {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
-        .timeline-branch-card li::before {
-            content: '•';
-            margin-right: 0.375rem;
-            color: var(--gray-400);
-        }
-
-        .status-dot {
+        .mock-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            display: inline-block;
+            background: var(--gray-300);
         }
 
-        .status-dot.green { background: var(--green); }
-        .status-dot.purple { background: var(--purple); }
-        .status-dot.teal { background: var(--teal); }
-
-        /* CTA Section */
-        .cta {
-            padding: 6rem 3rem;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
-            position: relative;
+        .mock-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
         }
 
-        .cta-container {
-            max-width: 650px;
+        .mock-bar {
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+        }
+
+        .mock-bar.short { width: 60%; }
+        .mock-bar.medium { width: 80%; }
+        .mock-bar.long { width: 100%; }
+        .mock-bar.accent { background: var(--teal-light); }
+
+        .result-card h4 {
+            padding: 1rem 1.25rem 0.5rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+        }
+
+        .result-metrics {
+            padding: 0.5rem 1.25rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8125rem;
+        }
+
+        .metric span:first-child {
+            color: var(--gray-500);
+        }
+
+        .metric span:last-child {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .metric.highlight span:last-child {
+            color: var(--green);
+        }
+
+        /* Who We Work With */
+        .icp-section {
+            padding: 6rem 2rem;
+        }
+
+        .icp-list {
+            max-width: 600px;
             margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 2rem;
         }
 
-        .cta h2 {
+        .icp-list ul {
+            list-style: none;
+        }
+
+        .icp-list li {
+            font-size: 1rem;
+            color: var(--gray-600);
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .icp-list li:last-child {
+            border-bottom: none;
+        }
+
+        .icp-list li::before {
+            content: '→';
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        /* Logo Grid (Static) */
+        .logo-grid-section {
+            padding: 6rem 2rem;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .logo-grid-item {
+            padding: 1.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .logo-grid-item:nth-child(5n) {
+            border-right: none;
+        }
+
+        .logo-grid-item:nth-child(n+6) {
+            border-bottom: none;
+        }
+
+        .logo-grid-item span {
+            font-weight: 600;
+            font-size: 0.8125rem;
+            color: var(--gray-400);
+            text-align: center;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .final-cta h2 {
             font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 400;
             margin-bottom: 1rem;
-            line-height: 1.2;
         }
 
-        .cta h2 em {
-            font-style: italic;
+        .final-cta p {
+            font-size: 1rem;
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
         }
 
-        .cta p {
-            font-size: 1.0625rem;
+        .final-cta .btn-primary {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .final-cta .btn-primary:hover {
+            background: var(--gray-200);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 6rem 2rem;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .faq-question:hover {
+            color: var(--gray-600);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--gray-400);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            font-size: 0.9375rem;
             color: var(--gray-500);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Footer */
         footer {
-            background: var(--cream);
+            padding: 3rem 2rem;
             border-top: 1px solid var(--gray-200);
-            padding: 4rem 3rem 2rem;
+            text-align: center;
         }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        footer .logo {
+            justify-content: center;
+            margin-bottom: 1rem;
         }
 
-        .footer-top {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-            gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .footer-brand p {
+        footer p {
             font-size: 0.875rem;
             color: var(--gray-500);
-            margin-top: 1rem;
-            max-width: 280px;
-            line-height: 1.6;
-        }
-
-        .footer-newsletter {
-            display: flex;
-            gap: 0;
-            margin-top: 1rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 8px;
-            overflow: hidden;
-            max-width: 320px;
-        }
-
-        .footer-newsletter input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: none;
-            font-size: 0.875rem;
-            font-family: var(--font-sans);
-            background: transparent;
-            outline: none;
-            min-width: 0;
-        }
-
-        .footer-newsletter button {
-            background: var(--black);
-            color: var(--white);
-            padding: 0.75rem 1rem;
-            border: none;
-            font-size: 0.75rem;
-            font-weight: 600;
-            font-family: var(--font-sans);
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .footer-links h4 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--black);
-            margin-bottom: 1.25rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.625rem;
-        }
-
-        .footer-links a {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--black);
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 2rem;
-        }
-
-        .footer-bottom p {
-            font-size: 0.8125rem;
-            color: var(--gray-500);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--black);
-            cursor: pointer;
-            padding: 0.5rem;
         }
 
         /* Animations */
@@ -1608,89 +987,43 @@
             transform: translateY(0);
         }
 
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s var(--ease-out);
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
-        .stagger-4 { transition-delay: 0.4s; }
-
         /* Responsive */
         @media (max-width: 1024px) {
-            .services-columns {
+            .reasons-grid,
+            .case-studies-grid {
                 grid-template-columns: 1fr;
             }
 
-            .service-column {
-                border-right: none;
-                border-bottom: 1px solid var(--gray-200);
-            }
-
-            .service-column:last-child {
-                border-bottom: none;
-            }
-
-            .case-study-card {
-                grid-template-columns: 1fr;
+            .testimonials-grid,
+            .deliverables-grid,
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .logo-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
 
-            .logo-item:nth-child(3n) {
+            .logo-grid-item:nth-child(3n) {
                 border-right: none;
             }
 
-            .logo-item:nth-child(n+4) {
-                border-top: 1px solid var(--gray-200);
-            }
-
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .feature-item:nth-child(2n) {
-                border-right: none;
-            }
-
-            .footer-top {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .flywheel-label {
-                display: none;
-            }
-
-            .timeline-row {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-content {
-                border-right: none;
-                border-bottom: 1px solid var(--gray-200);
+            .logo-grid-item:nth-child(n+4) {
+                border-bottom: none;
             }
         }
 
         @media (max-width: 768px) {
+            .grid-line-left-inner,
+            .grid-line-right-inner {
+                display: none;
+            }
+
             nav {
                 padding: 1rem 1.5rem;
             }
 
-            .nav-center {
+            .nav-links {
                 display: none;
             }
 
@@ -1702,75 +1035,75 @@
                 padding: 6rem 1.5rem 3rem;
             }
 
-            .services, .flywheel-section, .case-studies, .testimonials, .features, .timeline, .cta {
-                padding: 4rem 1.5rem;
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .testimonials-grid,
+            .deliverables-grid,
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .logo-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .logo-item:nth-child(2n) {
+            .logo-grid-item:nth-child(2n) {
                 border-right: none;
             }
 
-            .testimonials-grid,
-            .features-grid {
-                grid-template-columns: 1fr;
+            .logo-grid-item:nth-child(n+9) {
+                border-bottom: none;
             }
+        }
 
-            .feature-item {
-                border-right: none !important;
-            }
-
-            .flywheel-wrapper {
-                width: 300px;
-                height: 300px;
-            }
-
-            .flywheel-center {
-                width: 130px;
-                height: 130px;
-            }
-
-            .email-cta {
-                flex-direction: column;
-            }
-
-            .email-cta button {
-                border-radius: 0;
-            }
-
-            .footer-top {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .timeline-branches {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .timeline-branches::before {
+        @media (max-width: 480px) {
+            .grid-frame {
                 display: none;
+            }
+
+            .hero {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .why-section,
+            .case-studies,
+            .how-it-works,
+            .testimonials,
+            .deliverables,
+            .more-results,
+            .icp-section,
+            .logo-grid-section,
+            .faq-section {
+                padding: 4rem 1rem;
+            }
+
+            .deliverables-grid {
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Architectural Grid Frame - Lines on OUTSIDE framing content -->
+    <!-- Architectural Grid Frame -->
     <div class="grid-frame">
         <div class="grid-frame-inner">
-            <!-- Left side frame lines -->
             <div class="grid-line-left-outer"></div>
             <div class="grid-line-left-inner"></div>
-            <!-- Right side frame lines -->
             <div class="grid-line-right-outer"></div>
             <div class="grid-line-right-inner"></div>
         </div>
@@ -1779,25 +1112,15 @@
     <!-- Navigation -->
     <nav>
         <a href="#" class="logo">
-            <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" fill="#60A5FA"/>
-                <circle cx="12" cy="14" r="4" fill="#3B82F6"/>
-                <circle cx="20" cy="18" r="3" fill="#93C5FD"/>
-            </svg>
-            AIRR DIGITAL
+            <img src="logo.svg" alt="Airr Digital">
         </a>
-        <ul class="nav-center">
-            <li><a href="#services">Agency</a></li>
-            <li><a href="#results">Results</a></li>
-            <li class="nav-dropdown">
-                <a href="#testimonials">Education
-                    <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="6 9 12 15 18 9"/>
-                    </svg>
-                </a>
-            </li>
+        <ul class="nav-links">
+            <li><a href="#why">What We Offer</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="#contact" class="nav-cta">Get In Touch</a>
+        <a href="#book" class="nav-cta">Book A Meeting</a>
         <button class="mobile-menu-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -1808,370 +1131,169 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero framed-section">
-        <div class="hero-decoration decoration-circle decoration-circle-1"></div>
-        <div class="hero-decoration decoration-circle decoration-circle-2"></div>
-
+    <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge fade-in">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                    <path d="M2 17l10 5 10-5"/>
-                    <path d="M2 12l10 5 10-5"/>
-                </svg>
-                For B2B companies above >$100K/mo in revenue
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 12px; height: 12px;">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                </svg>
-            </div>
-            <h1 class="fade-in stagger-1">Tomorrow's <em>Growth Systems</em><br>Built Today.</h1>
-            <p class="hero-subtitle fade-in stagger-2">We build B2B Revenue Engines that sell for you</p>
-
-            <div class="hero-video-wrapper fade-in stagger-3">
-                <div class="hero-video">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon points="5 3 19 12 5 21 5 3"/>
-                        </svg>
-                    </div>
-                    <div class="video-caption">This is mostly answering who do you want to...</div>
-                </div>
-            </div>
+            <span class="pre-headline fade-in">For B2B SaaS Founders</span>
+            <h1 class="fade-in">We Help B2B SaaS Companies <em>Acquire Customers Profitably</em> On Ads, Halve Their CAC And Add $1M+ In ARR Within 12 Weeks</h1>
+            <p class="hero-subtitle fade-in">By implementing a full-funnel paid acquisition system, that generates leads, books qualified demos and acquires customers at a 3x ROAS or better.</p>
+            <a href="#book" class="btn-primary fade-in">Let's Talk About Your Ads</a>
         </div>
     </section>
 
-    
-    <!-- Logo Cloud -->
-    <section class="logo-cloud framed-section">
-        <p class="logo-cloud-title">GTM Teams that trust Airr Digital to grow their Pipelines</p>
-        <div class="logo-grid">
-            <div class="logo-item">
-                <span class="logo-placeholder">TechFlow</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">ScaleUp</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">GrowthOS</span>
-                <span class="case-study-badge">Case Study</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">RevOps</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">DataSync</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">CloudPeak</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">Metrics</span>
-                <span class="case-study-badge">Case Study</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">SalesForge</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">PipelineAI</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">LeadGen</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">ConvertX</span>
-                <span class="case-study-badge">Case Study</span>
-            </div>
-            <div class="logo-item">
-                <span class="logo-placeholder">Amplify</span>
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- Services Section with Flowcharts -->
-    <section class="services framed-section" id="services">
-        <div class="services-container">
-            <div class="section-header fade-in">
-                <h2><em>3 ways we help you grow</em><br>content, ads & outbound</h2>
-            </div>
-
-            <div class="services-columns scale-in">
-                <!-- Outbound Column -->
-                <div class="service-column">
-                    <h3>Outbound</h3>
-                    <p>We run personalized prospecting campaigns that flood your calendar with qualified leads.</p>
-
-                    <div class="flowchart">
-                        <div class="flow-row">
-                            <div class="flow-pill">Email Infra</div>
-                            <div class="flow-pill">ICP Matrix</div>
-                            <div class="flow-pill">TAM Scoping</div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">
-                                Play & Signals Selection
-                                <div class="flow-icons">
-                                    <span style="background: #0A66C2; color: white;">in</span>
-                                    <span style="background: #1DA1F2; color: white;">𝕏</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">Company & Contact Sourcing</div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">Lead Scoring & Tiering</div>
-                        </div>
-                        <div class="tier-row">
-                            <span class="tier-pill tier-1">Tier 1</span>
-                            <span class="tier-pill tier-2">Tier 2</span>
-                            <span class="tier-pill tier-3">Tier 3</span>
-                        </div>
-                        <div class="outcome-row">
-                            <span class="outcome-pill">High-Intent</span>
-                            <span class="outcome-pill">Signal-Based</span>
-                            <span class="outcome-pill">Personalized</span>
-                        </div>
-                        <div class="channel-row">
-                            <span class="channel-btn green">Omnichannel</span>
-                            <span class="channel-btn purple">Multichannel</span>
-                            <span class="channel-btn teal">Email Only</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LinkedIn Ads Column -->
-                <div class="service-column">
-                    <h3>LinkedIn Ads</h3>
-                    <p>We run ABM campaigns that turn cold accounts into sales-ready opportunities.</p>
-
-                    <div class="flowchart">
-                        <div class="flow-row">
-                            <div class="flow-pill">ICP Definition</div>
-                            <div class="flow-pill">Account List</div>
-                            <div class="flow-pill">Creative Assets</div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">
-                                Ad Design
-                                <div class="flow-icons">
-                                    <span style="background: #F24E1E; color: white;">F</span>
-                                    <span style="background: #0ACF83; color: white;">▲</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">Targeting</div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">Attribution</div>
-                        </div>
-                        <div class="tier-row">
-                            <span class="tier-pill tier-1">Tier 1</span>
-                            <span class="tier-pill tier-2">Tier 2</span>
-                            <span class="tier-pill tier-3">Tier 3</span>
-                        </div>
-                        <div class="outcome-row">
-                            <span class="outcome-pill">Awareness</span>
-                            <span class="outcome-pill">Consideration</span>
-                            <span class="outcome-pill">Conversion</span>
-                        </div>
-                        <div class="channel-row">
-                            <span class="channel-btn purple">Thought Leader</span>
-                            <span class="channel-btn green">Case Studies</span>
-                            <span class="channel-btn blue">Direct CTA</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LinkedIn Content Column -->
-                <div class="service-column">
-                    <h3>LinkedIn Content</h3>
-                    <p>We publish high-performing content pieces that educate your target on your offering.</p>
-
-                    <div class="flowchart">
-                        <div class="flow-row">
-                            <div class="flow-pill">ICP Research</div>
-                            <div class="flow-pill">Content Pillars</div>
-                            <div class="flow-pill">Brand Voice</div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">
-                                Content Ideation
-                                <div class="flow-icons">
-                                    <span style="background: #10A37F; color: white;">◆</span>
-                                    <span style="background: #5436DA; color: white;">N</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">Content Writing</div>
-                        </div>
-                        <div class="flow-row">
-                            <div class="flow-pill">Design</div>
-                        </div>
-                        <div class="tier-row">
-                            <span class="tier-pill tier-tof">TOF</span>
-                            <span class="tier-pill tier-mof">MOF</span>
-                            <span class="tier-pill tier-bof">BOF</span>
-                        </div>
-                        <div class="outcome-row">
-                            <span class="outcome-pill">Hot Takes</span>
-                            <span class="outcome-pill">How-Tos</span>
-                            <span class="outcome-pill">Case Studies</span>
-                        </div>
-                        <div class="channel-row">
-                            <span class="channel-btn blue">LinkedIn Posts</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- GTM Flywheel Section -->
-    <section class="flywheel-section framed-section">
-        <div class="flywheel-container">
-            <div class="flywheel-wrapper fade-in">
-                <svg class="flywheel-svg" viewBox="0 0 400 400">
-                    <defs>
-                        <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#8B5CF6"/>
-                            <stop offset="100%" style="stop-color:#A78BFA"/>
-                        </linearGradient>
-                        <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#14B8A6"/>
-                            <stop offset="100%" style="stop-color:#2DD4BF"/>
-                        </linearGradient>
-                        <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#22C55E"/>
-                            <stop offset="100%" style="stop-color:#4ADE80"/>
-                        </linearGradient>
-                    </defs>
-                    <!-- Content Segment (Purple) -->
-                    <path d="M200,200 L200,50 A150,150 0 0,1 329.9,275 Z" fill="url(#purpleGrad)"/>
-                    <!-- Outbound Segment (Teal) -->
-                    <path d="M200,200 L329.9,275 A150,150 0 0,1 70.1,275 Z" fill="url(#tealGrad)"/>
-                    <!-- ABM Ads Segment (Green) -->
-                    <path d="M200,200 L70.1,275 A150,150 0 0,1 200,50 Z" fill="url(#greenGrad)"/>
-
-                    <!-- Segment Labels -->
-                    <text x="260" y="130" fill="white" font-size="14" font-weight="600" transform="rotate(30 260 130)">Content</text>
-                    <text x="280" y="280" fill="white" font-size="14" font-weight="600" transform="rotate(-30 280 280)">Outbound</text>
-                    <text x="90" y="240" fill="white" font-size="14" font-weight="600" transform="rotate(30 90 240)">ABM Ads</text>
-
-                    <!-- Arrows -->
-                    <path d="M340,180 Q360,200 340,220" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrowhead)"/>
-                    <path d="M240,340 Q200,360 160,340" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <path d="M60,220 Q40,200 60,180" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                </svg>
-                <div class="flywheel-center">
-                    <h3>GTM Flywheel</h3>
-                    <p>Each closed deal fuels the next cycle</p>
-                </div>
-
-                <div class="flywheel-label right">
-                    <strong>Outbound</strong> generates immediate pipeline.
-                </div>
-                <div class="flywheel-label left">
-                    <strong>Content</strong> builds authority that compounds over time.
-                </div>
-                <div class="flywheel-label bottom">
-                    <strong>ABM Ads</strong> warm up cold prospects.
-                </div>
-            </div>
-
-            <div class="email-cta fade-in">
-                <input type="email" placeholder="Enter your work email">
-                <button>BOOK A CALL</button>
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- Case Study Section -->
-    <section class="case-studies framed-section" id="results">
-        <div class="section-header fade-in">
-            <h2><em>Find out for yourself how we generate</em><br>demand across the entire funnel</h2>
-        </div>
-
-        <div class="case-study-card scale-in">
-            <div class="case-study-content">
-                <h3>How Airr Digital + GrowthOS Built $7.83M in Qualified Pipeline (and $1.52M Closed-Won) with a Full ABM Motion</h3>
-                <a href="#" class="case-study-cta">
-                    Read Detailed Case Study
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+    <!-- VSL Section -->
+    <section class="vsl-section section">
+        <div class="vsl-container">
+            <div class="video-placeholder fade-in">
+                <div class="play-button">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
                     </svg>
-                </a>
+                </div>
             </div>
-            <div class="funnel-infographic">
-                <div class="funnel-stage blue-bg">
-                    <span class="funnel-stage-label">Lead Capture</span>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Visitor Identification</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">🎯</div>
-                            <div class="funnel-icon">📊</div>
-                            <div class="funnel-icon">🔍</div>
-                        </div>
+        </div>
+    </section>
+
+    <!-- CTA Block -->
+    <section class="cta-block section" id="book">
+        <a href="#" class="btn-primary fade-in">Book A Meeting</a>
+        <p class="microcopy fade-in">Free 30-minute strategy call. No obligation.</p>
+    </section>
+
+    <!-- Logo Scroll -->
+    <section class="logo-scroll section">
+        <h3>Trusted by 50+ B2B SaaS Companies</h3>
+        <div class="logo-track">
+            <div class="logo-item"><span>Instantly AI</span></div>
+            <div class="logo-item"><span>ListKit</span></div>
+            <div class="logo-item"><span>TxtCart</span></div>
+            <div class="logo-item"><span>Trustworthy</span></div>
+            <div class="logo-item"><span>Buddy Punch</span></div>
+            <div class="logo-item"><span>Float</span></div>
+            <div class="logo-item"><span>Simplesat</span></div>
+            <div class="logo-item"><span>Growthspace</span></div>
+            <div class="logo-item"><span>Submagic</span></div>
+            <div class="logo-item"><span>Inframail</span></div>
+            <div class="logo-item"><span>Promotix</span></div>
+            <div class="logo-item"><span>BookYourData</span></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="logo-item"><span>Instantly AI</span></div>
+            <div class="logo-item"><span>ListKit</span></div>
+            <div class="logo-item"><span>TxtCart</span></div>
+            <div class="logo-item"><span>Trustworthy</span></div>
+            <div class="logo-item"><span>Buddy Punch</span></div>
+            <div class="logo-item"><span>Float</span></div>
+            <div class="logo-item"><span>Simplesat</span></div>
+            <div class="logo-item"><span>Growthspace</span></div>
+            <div class="logo-item"><span>Submagic</span></div>
+            <div class="logo-item"><span>Inframail</span></div>
+            <div class="logo-item"><span>Promotix</span></div>
+            <div class="logo-item"><span>BookYourData</span></div>
+        </div>
+    </section>
+
+    <!-- Why Airr Digital -->
+    <section class="why-section section" id="why">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why <em>Airr Digital</em></h2>
+                <p>Paid ads. Paid ads. Paid ads... We only focus on paid ads for B2B SaaS companies.</p>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason-card fade-in">
+                    <h3>B2B SaaS Specialists</h3>
+                    <p>We only work with B2B SaaS. No ecom, no agencies, no local businesses. This focus means we know exactly what works for your market, your buyers, and your sales cycle.</p>
+                </div>
+                <div class="reason-card fade-in">
+                    <h3>Full-Funnel Ownership</h3>
+                    <p>We don't just run ads. We build the landing pages, write the VSL scripts, set up tracking, build the email flows, and optimize the entire funnel. You get one team handling everything, not five vendors pointing fingers.</p>
+                </div>
+                <div class="reason-card fade-in">
+                    <h3>Speed To Results</h3>
+                    <p>Most agencies take 4-8 weeks to launch. We get campaigns live in 14 days with new creative testing every 72 hours. You see data faster, we optimize faster, you get results faster.</p>
+                </div>
+                <div class="reason-card fade-in">
+                    <h3>Guaranteed Results</h3>
+                    <p>We've refined our process across 50+ B2B SaaS clients. The same frameworks that have worked for 1000s of ads get applied to your business from day one. On top of this we guarantee profitable results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies section" id="case-studies">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get Real <em>Results</em> And ROI</h2>
+            </div>
+            <div class="case-studies-grid">
+                <!-- Case Study 1: ProductHQ -->
+                <div class="case-study-card fade-in">
+                    <div class="case-study-header">
+                        <h4>ProductHQ</h4>
+                        <span>Product management platform</span>
                     </div>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Landing Pages & Forms</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">📄</div>
-                            <div class="funnel-icon">✍️</div>
-                            <div class="funnel-icon">📧</div>
+                    <div class="case-study-body">
+                        <h5>Problem</h5>
+                        <p>Competing in a crowded market with no clear positioning. Struggling to cut through noise and reach decision-makers.</p>
+                        <h5>What We Did</h5>
+                        <p>Conducted deep market research. Built ad creatives and campaigns with messaging that resonated with their specific ICP. Launched targeted campaigns across Meta.</p>
+                        <div class="case-study-result">
+                            <h5>Result</h5>
+                            <p>438 qualified meetings booked. 411% decrease in cost per booked call. $1.3M ARR added in 90 days.</p>
                         </div>
                     </div>
                 </div>
-                <div class="funnel-stage pink-bg">
-                    <span class="funnel-stage-label">Lead Management</span>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Lead Scoring</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">⭐</div>
-                            <div class="funnel-icon">📈</div>
-                        </div>
+
+                <!-- Case Study 2: Upnotify -->
+                <div class="case-study-card fade-in">
+                    <div class="case-study-header">
+                        <h4>Upnotify</h4>
+                        <span>Notification infrastructure for SaaS</span>
                     </div>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Lead Routing</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">🔀</div>
-                            <div class="funnel-icon">👥</div>
-                        </div>
-                    </div>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Lead Nurturing</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">💬</div>
-                            <div class="funnel-icon">🤝</div>
+                    <div class="case-study-body">
+                        <h5>Problem</h5>
+                        <p>High CAC making paid acquisition unprofitable. Existing funnel wasn't converting cold traffic into demos.</p>
+                        <h5>What We Did</h5>
+                        <p>Overhauled their entire paid advertising funnel. Scripted and launched 40+ ad creatives. Built custom landing pages for each campaign. Set up backend nurture and conversion systems.</p>
+                        <div class="case-study-result">
+                            <h5>Result</h5>
+                            <p>7.5x increase in conversions. 245% lower CAC. 9x more sign-ups within 60 days.</p>
                         </div>
                     </div>
                 </div>
-                <div class="funnel-stage purple-bg">
-                    <span class="funnel-stage-label">Lead Conversion</span>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Sales Enablement</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">📋</div>
-                            <div class="funnel-icon">🎤</div>
+
+                <!-- Case Study 3: Instantly AI -->
+                <div class="case-study-card fade-in">
+                    <div class="case-study-header">
+                        <h4>Instantly AI</h4>
+                        <span>Cold email infrastructure platform</span>
+                    </div>
+                    <div class="case-study-body">
+                        <h5>Problem</h5>
+                        <p>Generating traffic but not converting prospects into customers. Needed messaging that resonated with in-market buyers at scale.</p>
+                        <h5>What We Did</h5>
+                        <p>Identified high-intent audience segments. Crafted messaging and creative angles that spoke directly to their pain points. Built conversion systems to capture and convert leads.</p>
+                        <div class="case-study-result">
+                            <h5>Result</h5>
+                            <p>$140K MRR added through targeted acquisition and funnel optimization.</p>
                         </div>
                     </div>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Sales Calls</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">📞</div>
-                            <div class="funnel-icon">🎥</div>
-                        </div>
+                </div>
+
+                <!-- Case Study 4: BookYourData -->
+                <div class="case-study-card fade-in">
+                    <div class="case-study-header">
+                        <h4>BookYourData</h4>
+                        <span>B2B contact database</span>
                     </div>
-                    <div class="funnel-column">
-                        <div class="funnel-column-title">Proposals</div>
-                        <div class="funnel-icons">
-                            <div class="funnel-icon">📝</div>
-                            <div class="funnel-icon">✅</div>
+                    <div class="case-study-body">
+                        <h5>Problem</h5>
+                        <p>Leads weren't converting. Messaging was too generic and didn't differentiate from competitors in a commoditized market.</p>
+                        <h5>What We Did</h5>
+                        <p>Developed targeted messaging for specific buyer personas. Built conversion-focused funnels with personalized journeys based on user segment. Created campaigns targeting high-intent prospects.</p>
+                        <div class="case-study-result">
+                            <h5>Result</h5>
+                            <p>$60K MRR added. Improved lead-to-customer conversion across the entire funnel.</p>
                         </div>
                     </div>
                 </div>
@@ -2179,303 +1301,482 @@
         </div>
     </section>
 
-    
-    <!-- Testimonials -->
-    <section class="testimonials framed-section" id="testimonials">
-        <div class="testimonials-container">
+    <!-- How It Works -->
+    <section class="how-it-works section" id="how-it-works">
+        <div class="container">
             <div class="section-header fade-in">
-                <h2><em>Don't take our word for it</em><br>Hear it from them</h2>
+                <h2>How It <em>Works</em></h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Research & Strategy</h3>
+                        <p>We gather your sales call transcripts, analyze your ICP, and craft messaging that resonates with in-market prospects. We identify your highest-converting angles and build the campaign strategy around them.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Offer & Funnel Build</h3>
+                        <p>We help you craft a compelling offer and build the entire funnel - landing page, VSL, thank you page, sales booking flows. Everything designed to convert cold traffic into qualified demos and paying customers.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Ad Creative Production</h3>
+                        <p>We script, design, and edit your ad creatives - static images, video ads, carousels. Everything needed to launch and start testing. New variations are produced and tested every 72 hours.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Campaign Launch & Testing</h3>
+                        <p>We launch your campaigns, set up proper tracking and attribution, and test 60+ creatives simultaneously to find winners. On average we find a profitable angle, ad and funnel within 5-14 days of launch.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Optimization & Scale</h3>
+                        <p>We analyze performance data, cut what's not working, and scale the winners to maximise ROAS (return on ad spend) and POAS (profit on ad spend).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What Our <em>Clients</em> Say</h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <div class="testimonial-video gradient-1">
-                        <div class="testimonial-video-overlay">
-                            <div class="testimonial-quote">"We could really get more qualified list of people"</div>
+                    <div class="quote-icon">"</div>
+                    <blockquote>"Working with Airr Digital completely transformed our paid acquisition. We went from burning money on ads to having a predictable, profitable customer acquisition channel. Their process is legit."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>Andre</h4>
+                            <span>Founder, ListKit</span>
                         </div>
-                        <div class="testimonial-play">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <polygon points="5 3 19 12 5 21 5 3"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-author">
-                            <div class="testimonial-logo">LM</div>
-                            <div class="testimonial-info">
-                                <h4>Yee Lin Loke - Lyl Marketing</h4>
-                                <span>Director & Digital Strategist</span>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">"We got so many leads that our client came back to us and mentioned they don't have enough people to follow up with all these people!"</p>
                     </div>
                 </div>
-                <div class="testimonial-card fade-in stagger-1">
-                    <div class="testimonial-video gradient-2">
-                        <div class="testimonial-video-overlay">
-                            <div class="testimonial-quote">"It's GREAT!"</div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <blockquote>"These guys know B2B SaaS inside out. The speed they move at is impressive - we were live in under 2 weeks and seeing results by week 3. Best investment we made this year."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div class="testimonial-info">
+                            <h4>Carson Szeder</h4>
+                            <span>CEO, AI Edtech SaaS</span>
                         </div>
-                        <div class="testimonial-play">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <polygon points="5 3 19 12 5 21 5 3"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-author">
-                            <div class="testimonial-logo">NV</div>
-                            <div class="testimonial-info">
-                                <h4>Joe DeWulf - Novel</h4>
-                                <span>Co-Founder</span>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">"We're consistently getting five to eight leads per day and one to three customer installations - which is pretty solid."</p>
                     </div>
                 </div>
-                <div class="testimonial-card fade-in stagger-2">
-                    <div class="testimonial-video gradient-3">
-                        <div class="testimonial-video-overlay">
-                            <div class="testimonial-quote">"Knowledge is incredible"</div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <blockquote>"After trying 3 different agencies with no results, Airr Digital finally cracked the code for us. Our CAC dropped by 60% and we're now scaling profitably. Can't recommend them enough."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>Andrew Osborne</h4>
+                            <span>Founder, Upnotify</span>
                         </div>
-                        <div class="testimonial-play">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <polygon points="5 3 19 12 5 21 5 3"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-author">
-                            <div class="testimonial-logo">FD</div>
-                            <div class="testimonial-info">
-                                <h4>Max Gowing - Field Day</h4>
-                                <span>CEO and Founder</span>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">"Airr Digital's knowledge of the platforms is incredible and the Clay tables they build are fantastic."</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
-    <!-- Email CTA -->
-    <section class="framed-section" style="padding: 4rem 3rem; background: var(--cream);">
-        <div class="email-cta fade-in" style="max-width: 520px; margin: 0 auto;">
-            <input type="email" placeholder="Enter your work email">
-            <button>BOOK A CALL</button>
-        </div>
-    </section>
-
-    
-    <!-- Features Grid -->
-    <section class="features framed-section">
-        <div class="features-container">
+    <!-- Everything You Get -->
+    <section class="deliverables section">
+        <div class="container">
             <div class="section-header fade-in">
-                <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; margin-bottom: 0.5rem;">Where we shine and helped</p>
-                <h2>500+ GTM teams with</h2>
+                <h2>Everything You <em>Get</em></h2>
             </div>
-            <div class="features-grid">
-                <div class="feature-item fade-in">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="3"/>
-                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                    </svg>
-                    <h3>GTM Flywheel Integration</h3>
-                    <p>30M+ organic LinkedIn views. Millions of $ spent profitably on ads & 10,000s prospecting meetings booked.</p>
+            <div class="deliverables-grid">
+                <div class="deliverable-category fade-in">
+                    <h3>Strategy & Research</h3>
+                    <ul>
+                        <li>Sales call analysis to identify winning angles</li>
+                        <li>ICP research and persona development</li>
+                        <li>Competitor audit and differentiation mapping</li>
+                        <li>Messaging development and positioning</li>
+                        <li>Offer structuring and optimization</li>
+                    </ul>
                 </div>
-                <div class="feature-item fade-in stagger-1">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-                    </svg>
-                    <h3>Clay Implementation</h3>
-                    <p>We're only 1 of 4 Elite Studio Clay Expert. This is the highest tier within Clay's partner program.</p>
+                <div class="deliverable-category fade-in">
+                    <h3>Funnel Build</h3>
+                    <ul>
+                        <li>Landing page copy, design, and development</li>
+                        <li>VSL scripting</li>
+                        <li>VSL editing and production</li>
+                        <li>Thank you page and confirmation flow</li>
+                        <li>Booking system setup and optimization</li>
+                    </ul>
                 </div>
-                <div class="feature-item fade-in stagger-2">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                        <line x1="8" y1="21" x2="16" y2="21"/>
-                        <line x1="12" y1="17" x2="12" y2="21"/>
-                    </svg>
-                    <h3>Cutting-Edge Tech Stack</h3>
-                    <p>We use the latest tools and platforms to deliver exceptional results for your business.</p>
+                <div class="deliverable-category fade-in">
+                    <h3>Ad Creatives</h3>
+                    <ul>
+                        <li>Ad scripting and copywriting</li>
+                        <li>Static image ad design</li>
+                        <li>Video ad editing and production</li>
+                        <li>Carousel ad creation</li>
+                        <li>50+ total ad angles</li>
+                    </ul>
                 </div>
-                <div class="feature-item fade-in stagger-1">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                    </svg>
-                    <h3>Speed-to-Market</h3>
-                    <p>No need to wait 6 weeks to launch. Your first campaign is ready to go 2 weeks after signing.</p>
+                <div class="deliverable-category fade-in">
+                    <h3>Tracking & Attribution</h3>
+                    <ul>
+                        <li>Meta Pixel setup and configuration</li>
+                        <li>Conversion event tracking</li>
+                        <li>Server-side tracking implementation</li>
+                        <li>Call tracking integration</li>
+                        <li>Performance dashboards and reporting</li>
+                    </ul>
                 </div>
-                <div class="feature-item fade-in stagger-2">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
-                        <path d="M22 12A10 10 0 0 0 12 2v10z"/>
-                    </svg>
-                    <h3>Precise Data</h3>
-                    <p>We believe in tight ICP definition, accurate sourcing & clean data enrichment. 10+ software just for this.</p>
+                <div class="deliverable-category fade-in">
+                    <h3>Email Flows</h3>
+                    <ul>
+                        <li>Pre-call nurture sequences</li>
+                        <li>Post-call follow-up automation</li>
+                        <li>Lead reactivation campaigns</li>
+                        <li>Winback flows for lost opportunities</li>
+                        <li>Trial-to-paid conversion sequences</li>
+                    </ul>
                 </div>
-                <div class="feature-item fade-in stagger-3">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <line x1="18" y1="20" x2="18" y2="10"/>
-                        <line x1="12" y1="20" x2="12" y2="4"/>
-                        <line x1="6" y1="20" x2="6" y2="14"/>
-                    </svg>
-                    <h3>Full-Transparency Reporting</h3>
-                    <p>You get weekly live dashboards with granular metrics: deliverability, engagement, pipeline, infrastructure health.</p>
+                <div class="deliverable-category fade-in">
+                    <h3>Sales & CRM</h3>
+                    <ul>
+                        <li>CRM workflow optimization</li>
+                        <li>Pipeline setup and configuration</li>
+                        <li>Lead scoring implementation</li>
+                    </ul>
+                </div>
+                <div class="deliverable-category fade-in">
+                    <h3>Ongoing Optimization</h3>
+                    <ul>
+                        <li>Creative testing and iteration</li>
+                        <li>A/B testing across funnel</li>
+                        <li>Weekly performance reporting</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    
-    <!-- Timeline Section -->
-    <section class="timeline framed-section">
-        <div class="timeline-container">
+    <!-- More Results -->
+    <section class="more-results section">
+        <div class="container">
             <div class="section-header fade-in">
-                <h2><em>Your results timeline</em><br>what happens after onboarding</h2>
+                <h2>More Client <em>Results</em></h2>
             </div>
-
-            <div class="timeline-row fade-in">
-                <div class="timeline-content">
-                    <div class="timeline-week">Week 1 & 2:</div>
-                    <div class="timeline-title">Define & Setup</div>
-                    <p class="timeline-description">Build the foundations of your outbound infrastructure. We'll setup your email domains, warm accounts, and define your ICP matrix.</p>
-                </div>
-                <div class="timeline-visual">
-                    <div class="timeline-diagram">
-                        <div class="timeline-node highlighted">Your first campaigns hit the market</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-branches">
-                            <div class="timeline-branch">
-                                <div class="timeline-branch-card">
-                                    <h4><span class="status-dot green"></span> ContentIQ Live</h4>
-                                    <ul>
-                                        <li>LinkedIn posts</li>
-                                        <li>Visuals/carousels</li>
-                                        <li>Comment signals</li>
-                                    </ul>
-                                </div>
+            <div class="results-grid">
+                <!-- Result 1 -->
+                <div class="result-card fade-in">
+                    <div class="result-image">
+                        <div class="result-image-placeholder">
+                            <div class="mock-header">
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
                             </div>
-                            <div class="timeline-branch">
-                                <div class="timeline-branch-card">
-                                    <h4><span class="status-dot purple"></span> ABM Ads Running</h4>
-                                    <ul>
-                                        <li>TOF/MOF/BOF ads</li>
-                                        <li>Retargeting pools</li>
-                                        <li>Thought-leader ads</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="timeline-branch">
-                                <div class="timeline-branch-card">
-                                    <h4><span class="status-dot teal"></span> Outbound Sequences</h4>
-                                    <ul>
-                                        <li>Email + LinkedIn</li>
-                                        <li>Positive replies to Slack</li>
-                                    </ul>
-                                </div>
+                            <div class="mock-content">
+                                <div class="mock-bar short"></div>
+                                <div class="mock-bar long accent"></div>
+                                <div class="mock-bar medium"></div>
+                                <div class="mock-bar short accent"></div>
                             </div>
                         </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-node">Actionable insights inform next sprint.</div>
+                    </div>
+                    <h4>B2B Martech Startup</h4>
+                    <div class="result-metrics">
+                        <div class="metric"><span>Cost Per Demo</span><span>$127</span></div>
+                        <div class="metric"><span>CAC</span><span>$890</span></div>
+                        <div class="metric highlight"><span>MRR Added</span><span>+$52k</span></div>
                     </div>
                 </div>
-            </div>
 
-            <div class="timeline-row fade-in stagger-1">
-                <div class="timeline-content">
-                    <div class="timeline-week">Weeks 3 & 4:</div>
-                    <div class="timeline-title">Create & Launch</div>
-                    <p class="timeline-description">Craft your email sequences and build your lead lists. We'll start running your first campaigns and optimize based on initial results.</p>
-                </div>
-                <div class="timeline-visual">
-                    <div class="timeline-diagram">
-                        <div class="timeline-node highlighted">Meeting Booked</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-node">Sales Process</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-node" style="background: var(--black); color: white; border-color: var(--black);">
-                            ✓ Closed Won
+                <!-- Result 2 -->
+                <div class="result-card fade-in">
+                    <div class="result-image">
+                        <div class="result-image-placeholder">
+                            <div class="mock-header">
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                            </div>
+                            <div class="mock-content">
+                                <div class="mock-bar medium accent"></div>
+                                <div class="mock-bar short"></div>
+                                <div class="mock-bar long"></div>
+                                <div class="mock-bar medium accent"></div>
+                            </div>
                         </div>
+                    </div>
+                    <h4>AI Software Development SaaS</h4>
+                    <div class="result-metrics">
+                        <div class="metric"><span>Cost Per Demo</span><span>$89</span></div>
+                        <div class="metric"><span>ROAS</span><span>4.2x</span></div>
+                        <div class="metric highlight"><span>MRR Added</span><span>+$215k</span></div>
+                    </div>
+                </div>
+
+                <!-- Result 3 -->
+                <div class="result-card fade-in">
+                    <div class="result-image">
+                        <div class="result-image-placeholder">
+                            <div class="mock-header">
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                            </div>
+                            <div class="mock-content">
+                                <div class="mock-bar long"></div>
+                                <div class="mock-bar short accent"></div>
+                                <div class="mock-bar medium"></div>
+                                <div class="mock-bar long accent"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>B2B Data Enrichment Tool</h4>
+                    <div class="result-metrics">
+                        <div class="metric"><span>Cost Per Demo</span><span>$156</span></div>
+                        <div class="metric"><span>Payback Period</span><span>28 days</span></div>
+                        <div class="metric highlight"><span>MRR Added</span><span>+$180k</span></div>
+                    </div>
+                </div>
+
+                <!-- Result 4 -->
+                <div class="result-card fade-in">
+                    <div class="result-image">
+                        <div class="result-image-placeholder">
+                            <div class="mock-header">
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                            </div>
+                            <div class="mock-content">
+                                <div class="mock-bar short accent"></div>
+                                <div class="mock-bar long"></div>
+                                <div class="mock-bar medium accent"></div>
+                                <div class="mock-bar short"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>B2B Sales Automation SaaS</h4>
+                    <div class="result-metrics">
+                        <div class="metric"><span>Cost Per Demo</span><span>$73</span></div>
+                        <div class="metric"><span>ROAS</span><span>3.8x</span></div>
+                        <div class="metric highlight"><span>MRR Added</span><span>+$410k</span></div>
+                    </div>
+                </div>
+
+                <!-- Result 5 -->
+                <div class="result-card fade-in">
+                    <div class="result-image">
+                        <div class="result-image-placeholder">
+                            <div class="mock-header">
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                                <div class="mock-dot"></div>
+                            </div>
+                            <div class="mock-content">
+                                <div class="mock-bar medium"></div>
+                                <div class="mock-bar long accent"></div>
+                                <div class="mock-bar short"></div>
+                                <div class="mock-bar medium accent"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>B2B AI GTM Platform</h4>
+                    <div class="result-metrics">
+                        <div class="metric"><span>Cost Per Demo</span><span>$112</span></div>
+                        <div class="metric"><span>CAC</span><span>$1,200</span></div>
+                        <div class="metric highlight"><span>MRR Added</span><span>+$95k</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
-    <!-- CTA Section -->
-    <section class="cta framed-section" id="contact">
-        <div class="cta-container">
-            <h2 class="fade-in"><em>Ready to build your</em><br>growth engine?</h2>
-            <p class="fade-in stagger-1">Book a strategy call. We'll audit your current setup and show you exactly where the opportunities are.</p>
-            <div class="email-cta fade-in stagger-2">
-                <input type="email" placeholder="Enter your work email">
-                <button>RECEIVE AIRR'S GTM PLAYBOOK</button>
+    <!-- Who We Work With -->
+    <section class="icp-section section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Who We <em>Work With</em></h2>
+            </div>
+            <div class="icp-list fade-in">
+                <ul>
+                    <li>B2B SaaS companies</li>
+                    <li>With a sales-led GTM motion</li>
+                    <li>$500k+ ARR</li>
+                    <li>Reached product-market fit</li>
+                    <li>Ready to invest $200+/day in meta ads</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Grid -->
+    <section class="logo-grid-section section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Join 50+ <em>B2B SaaS</em> Companies</h2>
+            </div>
+            <div class="logo-grid fade-in">
+                <div class="logo-grid-item"><span>Instantly AI</span></div>
+                <div class="logo-grid-item"><span>ListKit</span></div>
+                <div class="logo-grid-item"><span>TxtCart</span></div>
+                <div class="logo-grid-item"><span>Trustworthy</span></div>
+                <div class="logo-grid-item"><span>Growthspace</span></div>
+                <div class="logo-grid-item"><span>Buddy Punch</span></div>
+                <div class="logo-grid-item"><span>Float</span></div>
+                <div class="logo-grid-item"><span>Simplesat</span></div>
+                <div class="logo-grid-item"><span>Submagic</span></div>
+                <div class="logo-grid-item"><span>Promotix</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta section">
+        <div class="container">
+            <h2 class="fade-in">Let's Talk About Your Ad Funnel</h2>
+            <p class="fade-in">Book a free 30-minute strategy call. We'll analyze your current funnel, identify the biggest opportunities, and show you exactly how you can improve your ads, or start running profitable meta ads.</p>
+            <a href="#book" class="btn-primary fade-in">Book A Meeting</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section section" id="faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Frequently Asked <em>Questions</em></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        What makes you different from other agencies?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We only work with B2B SaaS companies. That's it. This means every framework, every creative angle, every optimization we've learned comes from companies like yours. We also own the entire funnel - ads, landing pages, VSL, email flows - so you're not coordinating between five different vendors.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How long until I see results?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We launch campaigns within 14 days of kickoff. Most clients see their first booked demos within the first 7 days. Meaningful data on what's working usually comes by week 2-3. Full optimization and scaling typically happens over 6-8 weeks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        What's the minimum ad spend required?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We recommend a minimum of $200/day in ad spend. This gives us enough data to test creative angles, optimize campaigns, and scale what's working.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Do you work with PLG or self-serve companies?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We primarily work with sales-led B2B SaaS. If your main GTM motion is 100% product led growth, we're probably not the right fit. If you have a sales team and want to drive more qualified demos, that's where we excel.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        What if I've tried paid ads before and they didn't work?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most B2B SaaS companies fail at paid ads for one of three reasons: wrong offer, wrong creative, or wrong funnel. We fix all three. We've worked with companies who burned through agencies before finding us - the difference is we understand B2B SaaS buying cycles and build everything around booking qualified demos, not vanity metrics.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How involved do I need to be?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>During the first 2-3 weeks, we'll need more of your time - sales call recordings, offer feedback, creative approvals. After launch, it's typically a 30-minute call per week plus Slack for communication. We handle the execution.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Do you handle creative production or do I need to film content?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We handle everything - scripting, design, editing. For video ads and VSLs, we'll need you or your team to film the talking head portions. We provide the scripts and shot lists, you just need to spend 1 hour per month (approximately) on filming.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        What platforms do you run ads on?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Primarily Meta (Facebook and Instagram). We've seen Meta have the lowest CAC, and highest ROAS across 60+ B2B SaaS clients we've worked with.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How do you charge? What's the pricing model?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We have setup, monthly, 3-month or 6-month plans depending on what you're looking for. Our pricing ranges from $5k - $30k across our plans and offers. We can share specific pricing on a call once we understand your situation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Do I own everything you create?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. All landing pages, VSL scripts, ad creatives, email flows - everything we build is yours. If we part ways, you keep all assets and can continue running campaigns yourself.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        What if it doesn't work?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our goal is to make you profitable within 90 days. So we guarantee results, and offer a full refund if results are not met. If we've done our job and you've held up your end (ad spend, timely approvals, following our process), you will see results.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
-                            <circle cx="16" cy="16" r="14" fill="#60A5FA"/>
-                            <circle cx="12" cy="14" r="4" fill="#3B82F6"/>
-                            <circle cx="20" cy="18" r="3" fill="#93C5FD"/>
-                        </svg>
-                        AIRR DIGITAL
-                    </a>
-                    <p>All there is to know about the latest growth and prospecting techniques</p>
-                    <div class="footer-newsletter">
-                        <input type="email" placeholder="Get our best tips">
-                        <button>SUBSCRIBE</button>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Growth</h4>
-                    <ul>
-                        <li><a href="#">Agency</a></li>
-                        <li><a href="#">Accelerator Program</a></li>
-                        <li><a href="#">Grow your revenue</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Tech Stack</a></li>
-                        <li><a href="#">Video Content</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>GTM Tools</h4>
-                    <ul>
-                        <li><a href="#">FREE GTM Tools</a></li>
-                        <li><a href="#">AI Sales Tools</a></li>
-                        <li><a href="#">LinkedIn Tools</a></li>
-                        <li><a href="#">Data Sources</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Get In Touch</h4>
-                    <ul>
-                        <li><a href="mailto:hello@airrdigital.com">hello@airrdigital.com</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">@AirrDigital</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright 2025 © Airr Digital LLC</p>
-                <p>All rights reserved.</p>
-            </div>
-        </div>
+        <a href="#" class="logo">
+            <img src="logo.svg" alt="Airr Digital">
+        </a>
+        <p>&copy; 2026 Airr Digital. All rights reserved.</p>
     </footer>
 
     <script>
@@ -2493,11 +1794,39 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Smooth scroll for navigation links
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Sticky nav background
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2508,33 +1837,6 @@
                         block: 'start'
                     });
                 }
-            });
-        });
-
-        // Parallax effect on scroll
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const scrolled = window.pageYOffset;
-                    const decorations = document.querySelectorAll('.hero-decoration');
-                    decorations.forEach((dec, i) => {
-                        const speed = 0.1 + (i * 0.05);
-                        dec.style.transform = `translateY(${scrolled * speed}px)`;
-                    });
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-
-        // Add hover effects to flow pills
-        document.querySelectorAll('.flow-pill').forEach(pill => {
-            pill.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.02)';
-            });
-            pill.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
             });
         });
     </script>
