@@ -325,8 +325,9 @@
 
         /* Logo Scroll */
         .logo-scroll {
-            padding: 4rem 2rem;
+            padding: 4rem 0;
             overflow: hidden;
+            position: relative;
         }
 
         .logo-scroll h3 {
@@ -335,11 +336,19 @@
             color: var(--gray-500);
             margin-bottom: 2rem;
             font-weight: 500;
+            padding: 0 2rem;
+        }
+
+        .logo-scroll-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 60px;
         }
 
         .logo-track {
             display: flex;
-            animation: scroll 30s linear infinite;
+            animation: scroll 35s linear infinite;
         }
 
         .logo-track:hover {
@@ -353,15 +362,31 @@
 
         .logo-item {
             flex-shrink: 0;
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-width: 140px;
+        }
+
+        .logo-item img {
+            height: 28px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
         .logo-item span {
             font-weight: 600;
-            font-size: 0.9375rem;
+            font-size: 0.875rem;
             color: var(--gray-400);
             white-space: nowrap;
             transition: color 0.3s ease;
@@ -853,6 +878,21 @@
             border-bottom: none;
         }
 
+        .logo-grid-item img {
+            height: 24px;
+            width: auto;
+            max-width: 100px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .logo-grid-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
         .logo-grid-item span {
             font-weight: 600;
             font-size: 0.8125rem;
@@ -1162,32 +1202,34 @@
     <!-- Logo Scroll -->
     <section class="logo-scroll section">
         <h3>Trusted by 50+ B2B SaaS Companies</h3>
-        <div class="logo-track">
-            <div class="logo-item"><span>Instantly AI</span></div>
-            <div class="logo-item"><span>ListKit</span></div>
-            <div class="logo-item"><span>TxtCart</span></div>
-            <div class="logo-item"><span>Trustworthy</span></div>
-            <div class="logo-item"><span>Buddy Punch</span></div>
-            <div class="logo-item"><span>Float</span></div>
-            <div class="logo-item"><span>Simplesat</span></div>
-            <div class="logo-item"><span>Growthspace</span></div>
-            <div class="logo-item"><span>Submagic</span></div>
-            <div class="logo-item"><span>Inframail</span></div>
-            <div class="logo-item"><span>Promotix</span></div>
-            <div class="logo-item"><span>BookYourData</span></div>
-            <!-- Duplicate for seamless loop -->
-            <div class="logo-item"><span>Instantly AI</span></div>
-            <div class="logo-item"><span>ListKit</span></div>
-            <div class="logo-item"><span>TxtCart</span></div>
-            <div class="logo-item"><span>Trustworthy</span></div>
-            <div class="logo-item"><span>Buddy Punch</span></div>
-            <div class="logo-item"><span>Float</span></div>
-            <div class="logo-item"><span>Simplesat</span></div>
-            <div class="logo-item"><span>Growthspace</span></div>
-            <div class="logo-item"><span>Submagic</span></div>
-            <div class="logo-item"><span>Inframail</span></div>
-            <div class="logo-item"><span>Promotix</span></div>
-            <div class="logo-item"><span>BookYourData</span></div>
+        <div class="logo-scroll-wrapper">
+            <div class="logo-track">
+                <div class="logo-item"><img src="logos/instantly.svg" alt="Instantly AI"></div>
+                <div class="logo-item"><img src="logos/listkit.png" alt="ListKit"></div>
+                <div class="logo-item"><img src="logos/txtcart.svg" alt="TxtCart"></div>
+                <div class="logo-item"><img src="logos/trustworthy.png" alt="Trustworthy"></div>
+                <div class="logo-item"><img src="logos/buddypunch.svg" alt="Buddy Punch"></div>
+                <div class="logo-item"><img src="logos/float.svg" alt="Float"></div>
+                <div class="logo-item"><img src="logos/simplesat.svg" alt="Simplesat"></div>
+                <div class="logo-item"><span>Growthspace</span></div>
+                <div class="logo-item"><img src="logos/submagic.svg" alt="Submagic"></div>
+                <div class="logo-item"><span>Inframail</span></div>
+                <div class="logo-item"><span>Promotix</span></div>
+                <div class="logo-item"><img src="logos/bookyourdata.svg" alt="BookYourData"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="logo-item"><img src="logos/instantly.svg" alt="Instantly AI"></div>
+                <div class="logo-item"><img src="logos/listkit.png" alt="ListKit"></div>
+                <div class="logo-item"><img src="logos/txtcart.svg" alt="TxtCart"></div>
+                <div class="logo-item"><img src="logos/trustworthy.png" alt="Trustworthy"></div>
+                <div class="logo-item"><img src="logos/buddypunch.svg" alt="Buddy Punch"></div>
+                <div class="logo-item"><img src="logos/float.svg" alt="Float"></div>
+                <div class="logo-item"><img src="logos/simplesat.svg" alt="Simplesat"></div>
+                <div class="logo-item"><span>Growthspace</span></div>
+                <div class="logo-item"><img src="logos/submagic.svg" alt="Submagic"></div>
+                <div class="logo-item"><span>Inframail</span></div>
+                <div class="logo-item"><span>Promotix</span></div>
+                <div class="logo-item"><img src="logos/bookyourdata.svg" alt="BookYourData"></div>
+            </div>
         </div>
     </section>
 
@@ -1628,16 +1670,16 @@
                 <h2>Join 50+ <em>B2B SaaS</em> Companies</h2>
             </div>
             <div class="logo-grid fade-in">
-                <div class="logo-grid-item"><span>Instantly AI</span></div>
-                <div class="logo-grid-item"><span>ListKit</span></div>
-                <div class="logo-grid-item"><span>TxtCart</span></div>
-                <div class="logo-grid-item"><span>Trustworthy</span></div>
+                <div class="logo-grid-item"><img src="logos/instantly.svg" alt="Instantly AI"></div>
+                <div class="logo-grid-item"><img src="logos/listkit.png" alt="ListKit"></div>
+                <div class="logo-grid-item"><img src="logos/txtcart.svg" alt="TxtCart"></div>
+                <div class="logo-grid-item"><img src="logos/trustworthy.png" alt="Trustworthy"></div>
                 <div class="logo-grid-item"><span>Growthspace</span></div>
-                <div class="logo-grid-item"><span>Buddy Punch</span></div>
-                <div class="logo-grid-item"><span>Float</span></div>
-                <div class="logo-grid-item"><span>Simplesat</span></div>
-                <div class="logo-grid-item"><span>Submagic</span></div>
-                <div class="logo-grid-item"><span>Promotix</span></div>
+                <div class="logo-grid-item"><img src="logos/buddypunch.svg" alt="Buddy Punch"></div>
+                <div class="logo-grid-item"><img src="logos/float.svg" alt="Float"></div>
+                <div class="logo-grid-item"><img src="logos/simplesat.svg" alt="Simplesat"></div>
+                <div class="logo-grid-item"><img src="logos/submagic.svg" alt="Submagic"></div>
+                <div class="logo-grid-item"><img src="logos/bookyourdata.svg" alt="BookYourData"></div>
             </div>
         </div>
     </section>
