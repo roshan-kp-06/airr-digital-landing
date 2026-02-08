@@ -26,3 +26,5 @@ npx serve .
 ## Deployment
 
 Optimized for Vercel deployment. Simply connect your GitHub repo to Vercel for automatic deployments.
+
+Branch preview deployments enabled.
